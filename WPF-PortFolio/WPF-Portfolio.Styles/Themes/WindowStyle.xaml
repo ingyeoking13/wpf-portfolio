@@ -1,0 +1,52 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:styles="clr-namespace:WPF_Portfolio.Styles.WindowsTheme"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="MainWindowStyle" TargetType="{x:Type styles:DefaultWindow}">
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome
+                    CaptionHeight="24"
+                    CornerRadius="0"
+                    GlassFrameThickness="0"
+                    ResizeBorderThickness="5"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type styles:DefaultWindow}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="True">
+                        <Grid x:Name="TitleBarMainGrid">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="24" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid Background="#2a2d36" Panel.ZIndex="-1">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                                    <Button Margin="5" Content="-" Command="{Binding Source={x:Static SystemCommands.MinimizeWindowCommand}}"/>
+                                    <Button Margin="5" Content="o" Command="{Binding Source={x:Static SystemCommands.MaximizeWindowCommand}}"/>
+                                    <Button Margin="5" Content="x" Command="{Binding Source={x:Static SystemCommands.CloseWindowCommand}}"/>
+                                </StackPanel>
+                            </Grid>
+                            <!--<Grid Grid.Row="1">
+                                <Button Content="Content" Command="{Binding Source={x:Static SystemCommands.MaximizeWindowCommand}}"/>
+                            </Grid>-->
+                            <ContentPresenter 
+                                Grid.Row="1"
+                                Margin="{TemplateBinding Padding}"
+                                Focusable="False"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                RecognizesAccessKey="True"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>
