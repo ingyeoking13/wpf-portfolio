@@ -11,3 +11,17 @@ C:\Users\clbee\source\repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-Portfol
 C:\Users\clbee\source\repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\WPF-Portfolio.Styles.pdb
 C:\Users\clbee\source\repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\Themes\WindowStyle.baml
 C:\Users\clbee\source\repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\bin\Debug\WPF-Portfolio.Styles.dll.config
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\bin\Debug\WPF-Portfolio.Styles.dll
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\bin\Debug\WPF-Portfolio.Styles.pdb
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\WPF-Portfolio.Styles.csprojAssemblyReference.cache
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\WPF-Portfolio.Styles_MarkupCompile.cache
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\WPF-Portfolio.Styles_MarkupCompile.lref
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\Themes\WindowStyle.baml
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\WPF-Portfolio.Styles.g.resources
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\WPF_Portfolio.Styles.Properties.Resources.resources
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\WPF-Portfolio.Styles.csproj.GenerateResource.cache
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\WPF-Portfolio.Styles.csproj.CoreCompileInputs.cache
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\WPF-Portfolio.Styles.dll
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\WPF-Portfolio.Styles.pdb

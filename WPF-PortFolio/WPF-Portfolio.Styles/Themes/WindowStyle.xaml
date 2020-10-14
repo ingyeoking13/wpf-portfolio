@@ -6,12 +6,13 @@
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome
-                    CaptionHeight="24"
+                    CaptionHeight="15"
                     CornerRadius="0"
                     GlassFrameThickness="0"
-                    ResizeBorderThickness="5"/>
+                    ResizeBorderThickness="1"/>
             </Setter.Value>
         </Setter>
+        <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type styles:DefaultWindow}">
@@ -21,19 +22,19 @@
                             SnapsToDevicePixels="True">
                         <Grid x:Name="TitleBarMainGrid">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="24" />
+                                <RowDefinition Height="30" />
                                 <RowDefinition />
                             </Grid.RowDefinitions>
-                            <Grid Background="#2a2d36" Panel.ZIndex="-1">
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
-                                    <Button Margin="5" Content="-" Command="{Binding Source={x:Static SystemCommands.MinimizeWindowCommand}}"/>
+                            <Grid Background="#2a2d36" IsHitTestVisible="True">
+                                <StackPanel Orientation="Horizontal" IsHitTestVisible="True" HorizontalAlignment="Right" >
+                                    <!--<Button Margin="5" Content="-" Command="{Binding Source={x:Static SystemCommands.MinimizeWindowCommand}}"/>
                                     <Button Margin="5" Content="o" Command="{Binding Source={x:Static SystemCommands.MaximizeWindowCommand}}"/>
-                                    <Button Margin="5" Content="x" Command="{Binding Source={x:Static SystemCommands.CloseWindowCommand}}"/>
+                                    <Button Margin="5" Content="x" Command="{Binding Source={x:Static SystemCommands.CloseWindowCommand}}"/>-->
+                                    <Button Content="-" Margin="0 1" IsHitTestVisible="True" />
+                                    <Button Content="o" Margin="1 0" IsHitTestVisible="True"/>
+                                    <Button Content="x" Margin="1 0" IsHitTestVisible="True"/>
                                 </StackPanel>
                             </Grid>
-                            <!--<Grid Grid.Row="1">
-                                <Button Content="Content" Command="{Binding Source={x:Static SystemCommands.MaximizeWindowCommand}}"/>
-                            </Grid>-->
                             <ContentPresenter 
                                 Grid.Row="1"
                                 Margin="{TemplateBinding Padding}"
