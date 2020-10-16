@@ -1,17 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using LoginModule;
 using System.Windows;
+using Views.WPF_PortFolio;
 
 namespace WPF_PortFolio
 {
-    /// <summary>
-    /// App.xaml에 대한 상호 작용 논리
-    /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            var loginWindow = new LoginWindow();
+            if (loginWindow.CheckLogin())
+            {
+                var mainWindow = new MainWindow();
+                mainWindow.Show();
+
+            }
+            else
+            {
+                loginWindow.Show();
+            }
+            //base.OnStartup(e);
+        }
     }
 }

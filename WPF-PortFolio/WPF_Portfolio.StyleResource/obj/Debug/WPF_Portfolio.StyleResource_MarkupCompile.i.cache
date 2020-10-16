@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF_Portfolio.StyleResource\App.xaml
-21562667217
+3904166607
 
 61522651010
 13152784993
-MainWindow.xaml;Resources\ButtonResource\ButtonIcon.xaml;
+MainWindow.xaml;Resources\ButtonIcon.xaml;Resources\WindowIcon.xaml;
 
 True
 

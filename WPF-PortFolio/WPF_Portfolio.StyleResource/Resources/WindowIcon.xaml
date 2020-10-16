@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WPF_Portfolio.StyleResource.Resources">
+    <WindowChrome
+        x:Key="DefaultWindowChrome"
+        CaptionHeight="15"
+        CornerRadius="0"
+        GlassFrameThickness="0"
+        ResizeBorderThickness="1"/>
+</ResourceDictionary>
