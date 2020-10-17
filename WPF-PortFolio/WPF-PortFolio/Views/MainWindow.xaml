@@ -10,6 +10,10 @@
         Title="MainWindow"
         Height="450" Width="800"
         Style="{StaticResource MainWindowStyle}">
+    <pStyle:DefaultWindow.CommandBindings>
+        <CommandBinding Command="{x:Static SystemCommands.CloseWindowCommand}" 
+                        Executed="CloseWindow_Exec" />
+    </pStyle:DefaultWindow.CommandBindings>
     <Grid>
         <Button Content="HI"/>
     </Grid>

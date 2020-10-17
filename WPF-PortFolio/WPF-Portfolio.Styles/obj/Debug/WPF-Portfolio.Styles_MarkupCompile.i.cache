@@ -4,17 +4,17 @@
 library
 C#
 .cs
-C:\Users\clbee\source\repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\
+C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\
 WPF_Portfolio.Styles
 none
 false
 DEBUG;TRACE
 
-1712065125
+51389920676
 
-51640407551
-13152784993
-Themes\WindowStyle.xaml;
+6-1132088261
+141111464397
+MergedStyles.xaml;Themes\ButtonStyles.xaml;Themes\CheckBoxStyles.xaml;Themes\TextBoxStyles.xaml;Themes\WindowStyle.xaml;
 
 True
 

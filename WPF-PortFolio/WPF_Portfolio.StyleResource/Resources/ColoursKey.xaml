@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WPF_Portfolio.StyleResource.Colours"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    >
+    <!-- FontSize -->
+    <sys:Double x:Key="ExtremeLargeFontSize">48</sys:Double>
+    <sys:Double x:Key="LargeFontSize">13</sys:Double>
+    <sys:Double x:Key="RegularFontSize">11</sys:Double>
+    <sys:Double x:Key="SmallFontSize">9</sys:Double>
+    <sys:Double x:Key="ExtremeSmallFontSize">9</sys:Double>
+
+    <!-- FontFamily -->
+    <FontFamily x:Key="kakaoFont">pack://application:,,,/Fonts/#KakaoOTF Regular</FontFamily>
+    <FontFamily x:Key="spoqaFont">pack://application:,,,/Fonts/#SpoqaHanSans-Regular</FontFamily>
+
+    <!--<FontFamily x:Key="kakaoFont">./Fonts/#KakaoOTF Regular</FontFamily>
+    <FontFamily x:Key="spoqaFont">./Fonts/#SpoqaHanSans-Regular</FontFamily>-->
+
+    <!-- Colors -->
+    <SolidColorBrush x:Key="defaultWhite" Color="#fff"/>
+    <SolidColorBrush x:Key="defaultBlack" Color="#000"/>
+    <SolidColorBrush x:Key="defaultGrey" Color="#909aa2"/>
+    <SolidColorBrush x:Key="defaultBlue" Color="#000099"/>
+</ResourceDictionary>

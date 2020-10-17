@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/WPF_Portfolio.StyleResource;Component/Resources/ButtonIcon.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/WPF_Portfolio.StyleResource;Component/Resources/WindowIcon.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/WPF_Portfolio.StyleResource;Component/Resources/ImageResource.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

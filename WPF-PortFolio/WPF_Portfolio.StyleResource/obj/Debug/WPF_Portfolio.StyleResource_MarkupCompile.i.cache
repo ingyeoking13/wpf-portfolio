@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF_Portfolio.StyleResource\obj\Debug\
+C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF_Portfolio.StyleResource\obj\Debug\
 WPF_Portfolio.StyleResource
 none
 false
 DEBUG;TRACE
-C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF_Portfolio.StyleResource\App.xaml
-3904166607
+C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF_Portfolio.StyleResource\App.xaml
+51942035095
 
 61522651010
 13152784993
-MainWindow.xaml;Resources\ButtonIcon.xaml;Resources\WindowIcon.xaml;
+Resources\ColoursKey.xaml;MainWindow.xaml;Resources\ButtonIcon.xaml;Resources\ImageResource.xaml;Resources\WindowIcon.xaml;
 
 True
 

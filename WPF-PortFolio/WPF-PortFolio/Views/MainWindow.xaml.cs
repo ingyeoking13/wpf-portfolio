@@ -6,5 +6,10 @@
         {
             InitializeComponent();
         }
+
+        private void CloseWindow_Exec(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

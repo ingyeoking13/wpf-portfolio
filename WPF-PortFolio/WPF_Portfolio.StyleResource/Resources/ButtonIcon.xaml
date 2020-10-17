@@ -1,6 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:WPF_Portfolio.StyleResource.Resources">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Viewbox x:Key="ExitIcon" Width="10" Height="10" Stretch="UniformToFill" x:Shared="False">
         <Canvas Width="10" Height="10">
             <Path Width="10" Height="10" 

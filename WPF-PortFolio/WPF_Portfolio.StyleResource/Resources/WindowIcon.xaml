@@ -3,7 +3,7 @@
                     xmlns:local="clr-namespace:WPF_Portfolio.StyleResource.Resources">
     <WindowChrome
         x:Key="DefaultWindowChrome"
-        CaptionHeight="15"
+        CaptionHeight="24"
         CornerRadius="0"
         GlassFrameThickness="0"
         ResizeBorderThickness="1"/>

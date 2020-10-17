@@ -6,20 +6,26 @@ namespace WPF_PortFolio
 {
     public partial class App : Application
     {
-        protected override void OnStartup(StartupEventArgs e)
+        private void Application_Startup(object sender, StartupEventArgs e)
         {
+            MainWindow = new MainWindow();
             var loginWindow = new LoginWindow();
-            if (loginWindow.CheckLogin())
+            if (loginWindow.CheckLogin().Result)
             {
-                var mainWindow = new MainWindow();
-                mainWindow.Show();
-
+                MainWindow.Show();
             }
             else
             {
                 loginWindow.Show();
+
+                loginWindow.Closed += (s, ee) =>
+                {
+                    if (loginWindow.LoginResult == true)
+                    {
+                        MainWindow.Show();
+                    }
+                };
             }
-            //base.OnStartup(e);
         }
     }
 }
