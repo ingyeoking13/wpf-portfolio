@@ -7,6 +7,10 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/WPF-Portfolio.Styles;component/Themes/WindowStyle.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WPF-Portfolio.Styles;component/Themes/ButtonStyles.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WPF-Portfolio.Styles;component/Themes/CheckBoxStyles.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WPF-Portfolio.Styles;component/Themes/ListViewStyles.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WPF-Portfolio.Styles;component/Themes/TextBoxStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

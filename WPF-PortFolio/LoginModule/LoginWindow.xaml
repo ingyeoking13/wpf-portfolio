@@ -9,7 +9,7 @@
         Width="600"
         AllowsTransparency="True"
         Background="Transparent"
-        WindowChrome.WindowChrome="{DynamicResource DefaultWindowChrome}"
+        WindowChrome.WindowChrome="{DynamicResource LoginWindowChrome}"
         xmlns:local="clr-namespace:LoginModule" >
     <Window.Resources>
         <ResourceDictionary Source="MergedStyles.xaml"/>

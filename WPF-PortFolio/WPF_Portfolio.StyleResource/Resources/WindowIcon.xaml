@@ -6,5 +6,11 @@
         CaptionHeight="24"
         CornerRadius="0"
         GlassFrameThickness="0"
-        ResizeBorderThickness="1"/>
+        ResizeBorderThickness="3"/>
+    <WindowChrome
+        x:Key="LoginWindowChrome"
+        CaptionHeight="24"
+        CornerRadius="0"
+        GlassFrameThickness="0"
+        ResizeBorderThickness="0"/>
 </ResourceDictionary>

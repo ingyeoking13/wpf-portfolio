@@ -47,3 +47,4 @@ C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-Portfol
 C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\WPF-Portfolio.Styles.csproj.CopyComplete
 C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\Themes\CheckBoxStyles.baml
 C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\MergedStyles.baml
+C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\Themes\ListViewStyles.baml

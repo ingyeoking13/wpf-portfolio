@@ -6,15 +6,54 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_PortFolio"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         Title="MainWindow"
-        Height="450" Width="800"
+        MinWidth="600"
+        MinHeight="250"
+        Height="800" 
+        Width="800"
         Style="{StaticResource MainWindowStyle}">
     <pStyle:DefaultWindow.CommandBindings>
         <CommandBinding Command="{x:Static SystemCommands.CloseWindowCommand}" 
                         Executed="CloseWindow_Exec" />
+        <CommandBinding Command="{x:Static SystemCommands.MinimizeWindowCommand}" 
+                        Executed="MinimizeWindow" />
+        <CommandBinding Command="{x:Static SystemCommands.MaximizeWindowCommand}" 
+                        Executed="MaximizeWindow" />
     </pStyle:DefaultWindow.CommandBindings>
-    <Grid>
-        <Button Content="HI"/>
+
+    <!-- Navigation Menu And Content -->
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Navigation -->
+        <ListView d:DesignWidth="800" 
+                  d:DesignHeight="400" 
+                  x:Name="NavigationList"
+                  SelectedIndex="0"
+                  ItemsSource="{Binding NavigationItemSource}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Header}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding NavigationCommand}"
+                    CommandParameter="{Binding ElementName=NavigationList, Path=SelectedItem}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <!--Style="{DynamicResource NavigationListView}"-->
+            <!--ItemContainerStyle="{DynamicResource NavigationListItem}"-->
+        </ListView>
+
+        <!-- Content -->
+        <ContentPresenter x:Name="ContentArea" 
+                          Grid.Column="1" />
+
     </Grid>
 </pStyle:DefaultWindow>

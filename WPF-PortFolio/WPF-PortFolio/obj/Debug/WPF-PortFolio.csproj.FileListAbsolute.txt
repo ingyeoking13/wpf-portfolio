@@ -76,3 +76,16 @@ C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFol
 C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\WPF_Portfolio.StyleResource.exe
 C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\WPF_Portfolio.StyleResource.pdb
 C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\WPF_Portfolio.StyleResource.exe.config
+C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\obj\Debug\Views\AdminView.g.cs
+C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\obj\Debug\Views\HomeView.g.cs
+C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\obj\Debug\Views\MainListView.g.cs
+C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\obj\Debug\Views\AdminView.baml
+C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\obj\Debug\Views\HomeView.baml
+C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\obj\Debug\Views\MainListView.baml
+C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\System.Windows.Interactivity.xml
