@@ -91,3 +91,4 @@ C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFol
 C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\System.Windows.Interactivity.xml
 C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\Newtonsoft.Json.dll
 C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\Newtonsoft.Json.xml
+C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\obj\Debug\GeneratedInternalTypeHelper.g.cs

@@ -3,15 +3,71 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:converter ="clr-namespace:WPF_PortFolio.Utils.Converters"
              xmlns:local="clr-namespace:WPF_PortFolio.Views"
+             x:Name="_this"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <converter:UnixTimeToDateTimeConverter x:Key="unixTimeConverter"/>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="20"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="검색"/>
+            <TextBox x:Name="searchTB" 
+                    Width="250"
+                    KeyUp="searchTB_KeyUp"
+                    PreviewKeyDown="searchTB_KeyDown"
+                    Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" >
+                 <TextBox.Style>
+                    <Style TargetType="{x:Type TextBox}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding LoadingAnimation}" Value="True">
+                                <Setter Property="IsEnabled" Value="False"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+
+            <Popup x:Name="SearchPopup"
+                    IsOpen="{Binding IsOpen,Mode=TwoWay}"
+                   Focusable="False"
+                   PlacementTarget="{Binding ElementName=searchTB}"
+                   Placement="Bottom"
+                   StaysOpen="false">
+                <ListView x:Name="_PopupListView"
+                          Focusable="False"
+                          KeyUp="_PopupListView_KeyUp"
+                          VirtualizingPanel.IsContainerVirtualizable="True"
+                          VirtualizingPanel.IsVirtualizingWhenGrouping="True"
+                          VirtualizingPanel.VirtualizationMode="Recycling"
+                          VirtualizingPanel.IsVirtualizing="True"
+                          MouseDoubleClick="ListView_MouseDoubleClick"
+                          ItemsSource="{Binding SearchResult}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding name}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged" >
+                            <i:InvokeCommandAction Command="{Binding ChangeSearchTBCommand}"
+                                                   CommandParameter="{Binding SelectedItem, ElementName=_PopupListView}" />
+                            <i:InvokeCommandAction Command="{Binding ScrollMoveCommand}" 
+                                                   CommandParameter="{Binding ElementName=_PopupListView}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ListView>
+            </Popup>
+        </StackPanel>
+
         <TextBlock Text="Contest List" Grid.Row="1"/>
 
         <ListView Grid.Row="2" 
@@ -29,7 +85,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="{Binding id}"/>
                         <TextBlock Text="{Binding name}" Grid.Column="1"/>
-                        <TextBlock Text="{Binding startTimeSeconds}" Grid.Column="2"/>
+                        <TextBlock Text="{Binding startTimeSeconds, Converter={StaticResource unixTimeConverter}}"  Grid.Column="2"/>
                         <TextBlock Text="{Binding durationSeconds}" Grid.Column="3"/>
                     </Grid>
                 </DataTemplate>

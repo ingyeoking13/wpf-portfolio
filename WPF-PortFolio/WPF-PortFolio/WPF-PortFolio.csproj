@@ -88,6 +88,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Utils\BaseViewModel.cs" />
+    <Compile Include="Utils\Converters\UnixTimeToDateTimeConverter.cs" />
     <Compile Include="Utils\FakeRepository.cs" />
     <Compile Include="Utils\RelayCommand.cs" />
     <Compile Include="Utils\Util.cs" />

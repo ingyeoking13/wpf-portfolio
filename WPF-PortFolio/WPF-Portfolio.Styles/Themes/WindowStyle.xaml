@@ -8,7 +8,7 @@
         <ResourceDictionary Source="ButtonStyles.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <Style x:Key="MainWindowStyle" TargetType="{x:Type styles:DefaultWindow}">
-                <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="WindowStyle" Value="None"/>
         <Setter Property="WindowChrome.WindowChrome" Value="{DynamicResource DefaultWindowChrome}"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -22,7 +22,7 @@
                             SnapsToDevicePixels="True">
                         <Grid x:Name="TitleBarMainGrid">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="30" />
+                                <RowDefinition Height="40" />
                                 <RowDefinition Height="800" />
                             </Grid.RowDefinitions>
                             <Grid Background="#2a2d36" >
