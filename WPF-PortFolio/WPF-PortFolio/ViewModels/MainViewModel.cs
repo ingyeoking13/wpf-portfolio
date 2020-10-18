@@ -8,6 +8,8 @@ namespace WPF_PortFolio.ViewModels
 {
     public class NavigationItem 
     {
+        public string ImageURL { get; set; }
+
         private string _header;
         public string Header
         {
@@ -22,8 +24,10 @@ namespace WPF_PortFolio.ViewModels
             set { _command = value; }
         }
 
-        public NavigationItem(string Header, ICommand command)
+
+        public NavigationItem(string imageURL, string Header, ICommand command)
         {
+            this.ImageURL = ImageURL;
             this.Header = Header;
             this.Command = command;
         }
@@ -55,17 +59,23 @@ namespace WPF_PortFolio.ViewModels
             // 홈 페이지 -- 대시보드 UI
             NavigationItemSource.Add(
                 new NavigationItem(
-                    "HOME",  new RelayCommand(GoHomePage)));
+                    "pack://application:,,,/WPF_Portfolio.StyleResource;Component/Images/ic_Home.png",
+                    "HOME",  
+                    new RelayCommand(GoHomePage)));
 
             // 검색 페이지 -- 리스트 뷰 
             NavigationItemSource.Add(
                 new NavigationItem(
-                    "LIST", new RelayCommand(GoListPage)));
+                    "pack://application:,,,/WPF_Portfolio.StyleResource;Component/Images/ic_Search.png",
+                    "Search", 
+                    new RelayCommand(GoListPage)));
 
             // 관리 페이지 -- 사용자 프로필 리스트, 디테일 페이지 
-            //NavigationItemSource.Add(
-            //    new NavigationItem(
-            //        "ADMIN", new RelayCommand(GoAdminPage)));
+            NavigationItemSource.Add(
+                new NavigationItem(
+                    "pack://application:,,,/WPF_Portfolio.StyleResource;Component/Images/ic_Profile.png",
+                    "Profile", 
+                    new RelayCommand(GoAdminPage)));
 
             // Home 에서 시작
             NavigationCommand.Execute(NavigationItemSource[0]);

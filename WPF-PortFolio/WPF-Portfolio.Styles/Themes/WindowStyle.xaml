@@ -19,14 +19,17 @@
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="15 15 10 10"
                             SnapsToDevicePixels="True">
                         <Grid x:Name="TitleBarMainGrid">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="40" />
                                 <RowDefinition Height="800" />
                             </Grid.RowDefinitions>
-                            <Grid Background="#2a2d36" >
-                                <StackPanel Orientation="Horizontal" 
+                            <Border Background="{DynamicResource TitleBarColor}" 
+                                    CornerRadius="10 10 0 0" >
+                                <!-- resizeCommand None -->
+                                <!--<StackPanel Orientation="Horizontal" 
                                             HorizontalAlignment="Right" >
                                     <Button Content="{DynamicResource WindowMinimizeIcon}" 
                                             Style="{DynamicResource TransparentImageButton}"
@@ -42,8 +45,8 @@
                                             Style="{DynamicResource TransparentImageButton}"
                                             Command="{x:Static SystemCommands.CloseWindowCommand}"
                                             WindowChrome.IsHitTestVisibleInChrome="True"/>
-                                </StackPanel>
-                            </Grid>
+                                </StackPanel>-->
+                            </Border>
                             <ContentPresenter 
                                 Grid.Row="1"
                                 Margin="{TemplateBinding Padding}"

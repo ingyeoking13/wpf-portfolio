@@ -5,7 +5,7 @@
                     >
     <!-- FontSize -->
     <sys:Double x:Key="ExtremeLargeFontSize">48</sys:Double>
-    <sys:Double x:Key="LargeFontSize">13</sys:Double>
+    <sys:Double x:Key="LargeFontSize">14</sys:Double>
     <sys:Double x:Key="RegularFontSize">11</sys:Double>
     <sys:Double x:Key="SmallFontSize">9</sys:Double>
     <sys:Double x:Key="ExtremeSmallFontSize">9</sys:Double>
@@ -22,4 +22,7 @@
     <SolidColorBrush x:Key="defaultBlack" Color="#000"/>
     <SolidColorBrush x:Key="defaultGrey" Color="#909aa2"/>
     <SolidColorBrush x:Key="defaultBlue" Color="#000099"/>
+
+    <SolidColorBrush x:Key="TitleBarColor" Color="#200e32"/>
+    <SolidColorBrush x:Key="NavigationBackgroundColor" Color="#ffcd00"/>
 </ResourceDictionary>
