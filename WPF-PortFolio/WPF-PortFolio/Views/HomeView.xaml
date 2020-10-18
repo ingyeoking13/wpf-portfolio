@@ -2,6 +2,7 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPF_PortFolio.Views"
              mc:Ignorable="d" 
@@ -24,12 +25,11 @@
 
         <Border Grid.Row="1" 
                 CornerRadius="15" 
+                Background="AliceBlue"
                 Height="150">
-            <Border.Background>
-                <ImageBrush 
+                <!--<ImageBrush 
                     ImageSource="/DummyImages/Yohan.jpg">
-                </ImageBrush>
-            </Border.Background>
+                </ImageBrush>-->
         </Border>
         <!--#endregion-->
 
@@ -39,12 +39,44 @@
                 <RowDefinition Height="20"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Text="신사점수" 
+            <TextBlock Text="사용자 점수" 
                        FontWeight="Bold" 
                        FontSize="{DynamicResource LargeFontSize}"/>
+
             <ListView Grid.Row="1" 
-                      ItemsSource="{Binding Users}"/>
-            
+                      ItemContainerStyle="{DynamicResource UserListItem}"
+                      Style="{DynamicResource UserListView}"
+                      ItemsSource="{Binding Users}"
+                      ScrollViewer.CanContentScroll="False"
+                      >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+                            <!--<TextBlock 
+                                Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, 
+                                       Path=TemplatedParent.(ItemsControl.AlternationIndex)}"/>-->
+                            <TextBlock Text="{Binding Name}" Grid.Column="1"/>
+                            <Ellipse Width="30"
+                                     Height="30" 
+                                     Grid.Column="2" >
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="{Binding ProfilePicture}"/>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <TextBlock Text="{Binding Point}" Grid.Column="3"/>
+                            <TextBlock Text="{Binding}" Grid.Column="4"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
         </Grid>
         <!--#endregion-->
 
@@ -59,14 +91,24 @@
                        FontSize="{DynamicResource LargeFontSize}"/>
 
             <ListView Grid.Row="1" 
+                      x:Name="PortfolioListView"
                       ItemsSource="{Binding Portfolios}" 
-                      ItemContainerStyle="{DynamicResource PortfolioListItem}"
+                      ScrollViewer.HorizontalScrollBarVisibility="Visible"
+                      MouseMove="ListView_MouseMove"
+                      PreviewMouseLeftButtonDown="ListView_MouseLeftButtonDown"
+                      PreviewMouseLeftButtonUp="ListView_MouseLeftButtonUp"
                       PreviewMouseWheel="ListView_PreviewMouseWheel">
                 <ListView.ItemsPanel>
-                    <ItemsPanelTemplate >
+                    <ItemsPanelTemplate>
                         <WrapPanel Orientation="Horizontal"/>
                     </ItemsPanelTemplate>
                 </ListView.ItemsPanel>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource PortfolioListItem}">
+                        <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListViewItem_PreviewMouseLeftButtonDown"/>
+                        <EventSetter Event="MouseLeave" Handler="ListViewItem_MouseLeave"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
                 <ListView.ItemTemplate>
                     <DataTemplate >
                         <Grid>
@@ -89,9 +131,18 @@
                                        Grid.Row="3"/>
                             <Button Content="{Binding URL}"
                                     Grid.Row="4"
+                                    IsTabStop="False"
+                                    Command="{Binding DataContext.onClickURL,RelativeSource={RelativeSource AncestorType={x:Type ListView}}}"
+                                    CommandParameter="{Binding URL}"
                                     Style="{DynamicResource URLTextButton}"
-                                    HorizontalAlignment="Left"
-                                    />
+                                    HorizontalAlignment="Left">
+                                <!--<i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="PreviewLeftMouseButtonDown">
+                                        <i:InvokeCommandAction Command="{Binding DataContext.onClickURL, RelativeSource={RelativeSource AncestorType={x:Type ListView}}}" 
+                                                               CommandParameter="{Binding URL}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>-->
+                            </Button>
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>

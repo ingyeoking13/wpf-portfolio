@@ -35,6 +35,8 @@
                   d:DesignHeight="400" 
                   x:Name="NavigationList"
                   SelectedIndex="0"
+                  Style="{DynamicResource NavigationListView}"
+                  ItemContainerStyle="{DynamicResource NavigationListItem}"
                   ItemsSource="{Binding NavigationItemSource}">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -43,8 +45,9 @@
             </ListView.ItemTemplate>
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectionChanged">
-                    <i:InvokeCommandAction Command="{Binding NavigationCommand}"
-                    CommandParameter="{Binding ElementName=NavigationList, Path=SelectedItem}"/>
+                    <i:InvokeCommandAction 
+                        Command="{Binding NavigationCommand}"
+                        CommandParameter="{Binding ElementName=NavigationList, Path=SelectedItem}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
             <!--Style="{DynamicResource NavigationListView}"-->
@@ -52,8 +55,7 @@
         </ListView>
 
         <!-- Content -->
-        <ContentPresenter x:Name="ContentArea" 
-                          Grid.Column="1" />
+        <ContentPresenter x:Name="ContentArea" Grid.Column="1" />
 
     </Grid>
 </pStyle:DefaultWindow>

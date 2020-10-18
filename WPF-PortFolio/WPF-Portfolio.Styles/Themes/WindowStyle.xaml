@@ -47,8 +47,6 @@
                             <ContentPresenter 
                                 Grid.Row="1"
                                 Margin="{TemplateBinding Padding}"
-                                Width="{TemplateBinding Width}"
-                                Height="{TemplateBinding Height}"
                                 Focusable="False"
                                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}"

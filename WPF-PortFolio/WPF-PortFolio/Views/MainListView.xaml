@@ -7,6 +7,52 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Contest List" Grid.Row="1"/>
+
+        <ListView Grid.Row="2" 
+                  ItemsSource="{Binding ContestList}"
+                  VirtualizingPanel.VirtualizationMode="Recycling"
+                  Style="{DynamicResource ContestListView}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="250" />
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="150"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding id}"/>
+                        <TextBlock Text="{Binding name}" Grid.Column="1"/>
+                        <TextBlock Text="{Binding startTimeSeconds}" Grid.Column="2"/>
+                        <TextBlock Text="{Binding durationSeconds}" Grid.Column="3"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Grid Grid.Row="2" >
+            <Grid.Style>
+                <Style TargetType="{x:Type Grid}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding LoadingAnimation}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style> 
+            </Grid.Style>
+            <!--<Ellipse Width="8" Height="8"/>
+            <Ellipse Width="8" Height="8"/>
+            <Ellipse Width="8" Height="8"/>
+            <Ellipse Width="8" Height="8"/>-->
+            <TextBlock Text="Data Loading..." FontSize="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        
     </Grid>
 </UserControl>

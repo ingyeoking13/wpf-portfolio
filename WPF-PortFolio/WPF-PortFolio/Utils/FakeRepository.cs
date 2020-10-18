@@ -1,7 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace WPF_PortFolio.Utils
 {
@@ -22,6 +26,40 @@ namespace WPF_PortFolio.Utils
         public string Description { get; set; }
         public string Date { get; set; }
     }
+
+    // 코드포스 콘테스트
+    public class Contest
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        public int durationSeconds { get; set; }
+        public int startTimeSeconds { get; set; }
+    }
+    public class ContestAPI
+    {
+        public string status { get; set; }
+        public List<Contest> result {get; set;}
+    }
+
+/*
+id Integer.
+name    String.Localized.
+type Enum: CF, IOI, ICPC.Scoring system used for the contest.
+phase Enum: BEFORE, CODING, PENDING_SYSTEM_TEST, SYSTEM_TEST, FINISHED.
+frozen Boolean. If true, then the ranklist for the contest is frozen and shows only submissions, created before freeze.
+durationSeconds Integer. Duration of the contest in seconds.
+startTimeSeconds Integer. Can be absent.Contest start time in unix format.
+relativeTimeSeconds Integer. Can be absent.Number of seconds, passed after the start of the contest.Can be negative.
+preparedBy String. Can be absent.Handle of the user, how created the contest.
+websiteUrl String. Can be absent.URL for contest-related website.
+description String. Localized.Can be absent.
+difficulty Integer. Can be absent.From 1 to 5. Larger number means more difficult problems.
+kind String. Localized.Can be absent.Human-readable type of the contest from the following categories: Official ICPC Contest, Official School Contest, Opencup Contest, School/University/City/Region Championship, Training Camp Contest, Official International Personal Contest, Training Contest.
+icpcRegion String. Localized.Can be absent.Name of the Region for official ICPC contests.
+country String. Localized.Can be absent.
+city String. Localized.Can be absent.
+season String. Can be absent.
+*/
 
     public class FakeRepository
     {
@@ -54,6 +92,22 @@ namespace WPF_PortFolio.Utils
             return _portfolios;
         }
 
+
+        public async Task<IEnumerable<Contest>> GetAllContest()
+        {
+            HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create("https://codeforces.com/api/contest.list");
+            var requestResult = (HttpWebResponse)(await httpWebRequest.GetResponseAsync());
+            if (requestResult.StatusCode != HttpStatusCode.OK)
+                return null;
+
+            using (var stream = new StreamReader(requestResult.GetResponseStream()))
+            {
+                var str = stream.ReadToEnd();
+                var result = JsonConvert.DeserializeObject<ContestAPI>(str);
+                return result.result;
+            }
+        }
+
         // Fake Repository
         List<User> _users = new List<User>
         {
@@ -62,7 +116,7 @@ namespace WPF_PortFolio.Utils
                 Id = new Guid(),
                 Name = "정요한",
                 Description = "",
-                ProfilePicture = "/DummyImages/Yohan.png",
+                ProfilePicture = "/DummyImages/Yohan.jpg",
                 Point = 1.7f
             },
             new User
@@ -70,7 +124,7 @@ namespace WPF_PortFolio.Utils
                 Id = new Guid(),
                 Name = "정문희",
                 Description = "",
-                ProfilePicture = "/DummyImages/Munee.png",
+                ProfilePicture = "/DummyImages/Munee.jpg",
                 Point = 5f
             },
             new User

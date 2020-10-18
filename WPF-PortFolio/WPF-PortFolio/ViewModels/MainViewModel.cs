@@ -63,9 +63,9 @@ namespace WPF_PortFolio.ViewModels
                     "LIST", new RelayCommand(GoListPage)));
 
             // 관리 페이지 -- 사용자 프로필 리스트, 디테일 페이지 
-            NavigationItemSource.Add(
-                new NavigationItem(
-                    "ADMIN", new RelayCommand(GoAdminPage)));
+            //NavigationItemSource.Add(
+            //    new NavigationItem(
+            //        "ADMIN", new RelayCommand(GoAdminPage)));
 
             // Home 에서 시작
             NavigationCommand.Execute(NavigationItemSource[0]);
@@ -82,7 +82,7 @@ namespace WPF_PortFolio.ViewModels
         private void GoListPage(object arg)
         { 
             var contentWindow = new MainListView();
-            contentWindow.DataContext = new MainListViewModel();
+            contentWindow.DataContext = new MainListViewModel(FakeRepository.Instance);
             view.ContentArea.Content = contentWindow;
         }
 

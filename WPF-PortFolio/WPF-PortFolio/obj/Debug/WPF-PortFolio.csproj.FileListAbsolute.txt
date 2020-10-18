@@ -89,3 +89,5 @@ C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFol
 C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\Microsoft.Xaml.Behaviors.xml
 C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\Newtonsoft.Json.dll
+C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\Newtonsoft.Json.xml

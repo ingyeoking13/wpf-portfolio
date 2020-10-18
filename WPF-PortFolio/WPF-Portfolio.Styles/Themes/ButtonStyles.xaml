@@ -140,10 +140,10 @@
     <Style x:Key="URLTextButton" TargetType="{x:Type Button}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
         <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource defaultBlue}"/>
         <Setter Property="Foreground" Value="{DynamicResource defaultBlack}"/>
         <Setter Property="FontSize" Value="{DynamicResource SmallFontSize}"/>
-        <Setter Property="BorderThickness" Value="0 0 0 3"/>
+        <Setter Property="BorderThickness" Value="0 0 0 1"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Padding" Value="0"/>
@@ -156,8 +156,8 @@
                             BorderThickness="{TemplateBinding BorderThickness}" 
                             Background="{TemplateBinding Background}" 
                             Width="{TemplateBinding Width}"
-                            SnapsToDevicePixels="true">
-                        </Border>
+                            Visibility="Hidden"
+                            SnapsToDevicePixels="true"/>
                         <ContentPresenter x:Name="contentPresenter" 
                                           Focusable="False" 
                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
