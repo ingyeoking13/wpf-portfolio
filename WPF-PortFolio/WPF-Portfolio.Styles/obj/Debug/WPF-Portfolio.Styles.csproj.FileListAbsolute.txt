@@ -48,3 +48,12 @@ C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-Portfol
 C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\Themes\CheckBoxStyles.baml
 C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\MergedStyles.baml
 C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\Themes\ListViewStyles.baml
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\bin\Debug\WPF_Portfolio.StyleResource.exe
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\bin\Debug\WPF_Portfolio.StyleResource.pdb
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\bin\Debug\WPF_Portfolio.StyleResource.exe.config
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\MergedStyles.baml
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\Themes\ButtonStyles.baml
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\Themes\CheckBoxStyles.baml
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\Themes\ListViewStyles.baml
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\Themes\TextBoxStyles.baml
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\WPF-Portfolio.Styles.csproj.CopyComplete

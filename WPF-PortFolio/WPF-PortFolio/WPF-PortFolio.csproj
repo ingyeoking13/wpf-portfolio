@@ -88,6 +88,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Utils\BaseViewModel.cs" />
+    <Compile Include="Utils\Converters\BitmapConverter.cs" />
     <Compile Include="Utils\Converters\UnixTimeToDateTimeConverter.cs" />
     <Compile Include="Utils\FakeRepository.cs" />
     <Compile Include="Utils\RelayCommand.cs" />
@@ -163,6 +164,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="DummyImages\Vigne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ic_Home.png" />
+    <Resource Include="Resources\ic_Profile.png" />
+    <Resource Include="Resources\ic_Search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -28,8 +28,17 @@
                             </Grid.RowDefinitions>
                             <Border Background="{DynamicResource TitleBarColor}" 
                                     CornerRadius="10 10 0 0" >
-                                <!-- resizeCommand None -->
-                                <!--<StackPanel Orientation="Horizontal" 
+                                <Grid>
+                                    <TextBlock Text="{TemplateBinding Title}"
+                                               HorizontalAlignment="Left"
+                                               Foreground="{DynamicResource defaultWhite}"
+                                               VerticalAlignment="Center"
+                                               FontWeight="Bold"
+                                               Margin="20 0 0 0"
+                                               LineHeight="24"
+                                               FontSize="{DynamicResource ExtremeLargeFontSize}"/>
+                                    <!-- resizeCommand None -->
+                                    <!--<StackPanel Orientation="Horizontal" 
                                             HorizontalAlignment="Right" >
                                     <Button Content="{DynamicResource WindowMinimizeIcon}" 
                                             Style="{DynamicResource TransparentImageButton}"
@@ -40,16 +49,19 @@
                                             Style="{DynamicResource TransparentImageButton}"
                                             Command="{x:Static SystemCommands.MaximizeWindowCommand}"
                                             WindowChrome.IsHitTestVisibleInChrome="True"/>
-                                    <Button Content="{DynamicResource ExitIcon}" 
+                                </StackPanel>-->
+                                    <Button Content="{DynamicResource WindowCloseIcon}" 
                                             Margin="10 0 "
+                                            HorizontalAlignment="Right"
                                             Style="{DynamicResource TransparentImageButton}"
                                             Command="{x:Static SystemCommands.CloseWindowCommand}"
                                             WindowChrome.IsHitTestVisibleInChrome="True"/>
-                                </StackPanel>-->
+                                </Grid>
                             </Border>
                             <ContentPresenter 
                                 Grid.Row="1"
                                 Margin="{TemplateBinding Padding}"
+                                Width="{TemplateBinding Width}"
                                 Focusable="False"
                                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}"

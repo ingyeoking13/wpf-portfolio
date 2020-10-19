@@ -1,133 +1,133 @@
-﻿<Window x:Class="LoginModule.LoginWindow"
+﻿<pStyle:DefaultWindow 
+        x:Class="LoginModule.LoginWindow"
+        xmlns:pStyle="clr-namespace:WPF_Portfolio.Styles.WindowsTheme;assembly=WPF-Portfolio.Styles"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         WindowStyle="None"
-        Height="350"
-        Width="600"
+        Height="600"
+        Width="506"
         AllowsTransparency="True"
-        Background="Transparent"
+        Style="{DynamicResource MainWindowStyle}"
+        Title="YOHANI!"
+        Background="{DynamicResource defaultWhite}"
+        FontFamily="{DynamicResource DefaultFont}"
         WindowChrome.WindowChrome="{DynamicResource LoginWindowChrome}"
         xmlns:local="clr-namespace:LoginModule" >
     <Window.Resources>
         <ResourceDictionary Source="MergedStyles.xaml"/>
     </Window.Resources>
 
-    <Grid >
+    <Grid Width="506" Height="560">
         <Grid.RowDefinitions>
-            <RowDefinition Height="24"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="140"/>
+            <RowDefinition />
         </Grid.RowDefinitions>
-        <!-- Background -->
-        <Border x:Name="Background" Grid.RowSpan="100">
-            <Grid>
-                <!--<ContentPresenter Content="{DynamicResource LoginBackgroundImage}"/> -->
-                <!--Opacity="0.5"/>-->
-                <Image Stretch="Fill"
-                    Source="pack://application:,,,/WPF_Portfolio.StyleResource;Component/Images/forest-2033331_1920.jpg"/>
-                <Rectangle Fill="#664747d1"/>
-            </Grid>
-        </Border>
-        <StackPanel>
-            <Button Style="{DynamicResource TransparentImageButton}" 
-                    Width="24"
-                    Height="24"
-                    HorizontalAlignment="Right"
-                    x:Name="CloseButton"
-                    WindowChrome.IsHitTestVisibleInChrome="True"
-                    Content="{DynamicResource ExitIcon}" />
-        </StackPanel>
+        <!-- Login Image -->
+        <Image Width="157" Height="104" Margin="0 36 0 0" Source="pack://application:,,,/LoginModule;component/Resources/login_image.png"/>
+
         <!-- Login Main Logo -->
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="100 0">
-            <ToggleButton Content="SIGN IN" 
-                          Width="100"
-                          IsChecked="True"
-                          x:Name="SignInButton"
-                          Style="{DynamicResource TextToggleButtonWithUnderLine}" />
-            <ToggleButton Content="SIGN UP" 
-                          Width="100"
-                          x:Name="SignUpButton"
-                          Style="{DynamicResource TextToggleButtonWithUnderLine}"/>
-        </StackPanel>
-        <Grid Grid.Row="2" Margin="100 0" >
+        <Grid Grid.Row="2" Margin="88 40 85 0" >
             <Grid.RowDefinitions>
+                <!-- Account 0-->
+                <RowDefinition Height="18"/>
+                <!-- Margin -->
+                <RowDefinition Height="8"/>
+                <!-- Account Textbox 2-->
+                <RowDefinition Height="40"/>
+                <!-- Margin -->
                 <RowDefinition Height="20"/>
-                <RowDefinition/>
+                <!-- Password 4-->
+                <RowDefinition Height="18"/>
+                <!-- Margin -->
+                <RowDefinition Height="8"/>
+                <!-- Password Textbox 6-->
+                <RowDefinition Height="40"/>
+                <!-- Margin -->
                 <RowDefinition Height="20"/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <!-- Sign In 8-->
+                <RowDefinition Height="40"/>
+                <!-- Margin And Check Box And Forgotpswd-->
+                <RowDefinition Height="24"/>
+                <!-- OR -->
+                <RowDefinition Height="44"/>
+                <!-- SigIn -->
+                <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
 
             <!-- USERNAME-->
-            <TextBlock Text="USERNAME" 
-                       Margin="5 0 0 0 "
-                       Foreground="{DynamicResource defaultWhite}" 
-                       FontSize="{DynamicResource SmallFontSize}"
+            <TextBlock Text="ACCOUNT" 
+                       FontWeight="Bold"
+                       FontSize="{DynamicResource LargeFontSize}"
+                       Foreground="{DynamicResource SemiBlack}" 
                        VerticalAlignment="Bottom" />
-            <TextBox MinWidth="100" 
+            <TextBox Width="333" 
                      Style="{DynamicResource LoginTextBox}" 
-                     Grid.Row="1"/>
+                     Grid.Row="2"/>
 
             <!--PASSWORD-->
             <TextBlock Text="PASSWORD" 
-                       Margin="5 0 0 0"
-                       Foreground="{DynamicResource defaultWhite}" 
-                       FontSize="{DynamicResource SmallFontSize}"
-                       VerticalAlignment="Center" 
-                       Grid.Row="2" />
-            <TextBox MinWidth="100" 
+                       Grid.Row="4"
+                       FontWeight="Bold"
+                       FontSize="{DynamicResource LargeFontSize}"
+                       Foreground="{DynamicResource SemiBlack}" 
+                       VerticalAlignment="Bottom" />
+            
+            <TextBox Width="333" 
                      Style="{DynamicResource LoginTextBox}" 
-                     Grid.Row="3"/>
-
-            <!-- Keep Login -->
-            <CheckBox Grid.Row="4" 
-                      VerticalAlignment="Center" 
-                      HorizontalAlignment="Left"
-                      Height="15"
-                      Width="15"
-                      Margin="5 0"
-                      Style="{DynamicResource DefaultCheckBox}"/>
-
-            <TextBlock 
-                Grid.Row="4"
-                Margin="30 0"
-                Text="Keep me Signed in"
-                Foreground="{DynamicResource defaultWhite}"
-                VerticalAlignment="Center"
-                />
+                     Grid.Row="6"/>
 
             <!-- Sign In Button -->
-            <Button Grid.Row="5" 
+            <Button Grid.Row="8" 
                     x:Name="LogInButton"
-                    Style="{DynamicResource SignInButton}" 
-                    Content="SIGN IN" 
-                    Margin="80 0"/>
+                    Style="{DynamicResource SignInButton}"
+                    Content="Sign in" />
 
-            <TextBlock x:Name="ForgotPassword"
-                       Text="Forgot Password?" 
-                       Grid.Row="6" 
-                       Grid.ColumnSpan="100" 
+            <!-- Keep Login -->
+            <CheckBox Grid.Row="9" 
+                      VerticalAlignment="Bottom" 
+                      HorizontalAlignment="Left"
+                      Height="12"
+                      Width="12"
+                      Style="{DynamicResource DefaultCheckBox}"/>
+
+            <TextBlock Grid.Row="9"
                        VerticalAlignment="Bottom"
-                       HorizontalAlignment="Center" 
-                       TextDecorations="Underline"
-                       FontSize="{DynamicResource ExtremeSmallFontSize}">
-                <TextBlock.Style>
-                    <Style TargetType="{x:Type TextBlock}">
-                        <Setter Property="Foreground" Value="{DynamicResource defaultGrey}"/>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Foreground" Value="{DynamicResource defaultWhite}"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </TextBlock.Style>
-            </TextBlock>
+                       HorizontalAlignment="Left"
+                       Margin="18 0 0 0"
+                       LineHeight="12"
+                       Text="Keep me signed in"
+                       Foreground="{DynamicResource SemiBlack}"
+                       FontSize="{DynamicResource SmallFontSize}"/>
+
+            <TextBlock Grid.Row="9"
+                       VerticalAlignment="Bottom"
+                       HorizontalAlignment="Right"
+                       Text="Forgot Password?"
+                       TextDecorations="UnderLine"
+                       LineHeight="12"
+                       Foreground="{DynamicResource SemiBlack}"
+                       FontSize="{DynamicResource SmallFontSize}" />
+
+            <TextBlock Grid.Row="10"
+                       VerticalAlignment="Bottom"
+                       HorizontalAlignment="Center"
+                       Text="OR"
+                       Margin="0 0 0 10"
+                       LineHeight="12"
+                       Foreground="{DynamicResource SemiGray}"
+                       FontSize="{DynamicResource SmallFontSize}" />
+
+            <Button Grid.Row="11" 
+                    x:Name="SignupButton"
+                    Background="{DynamicResource defaultWhite}"
+                    Foreground="{DynamicResource SemiYellow}"
+                    BorderThickness="1"
+                    Style="{DynamicResource SignInButton}"
+                    Content="Sign in" />
+           
         </Grid>
     </Grid>
-</Window>
+</pStyle:DefaultWindow>

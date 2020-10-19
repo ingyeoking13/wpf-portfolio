@@ -6,153 +6,336 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPF_PortFolio.Views"
              mc:Ignorable="d" 
-             Background="White"
-             d:DesignHeight="450" 
-             d:DesignWidth="400">
-    <ScrollViewer VerticalScrollBarVisibility="Auto" 
-                  Width="680"
-                  Height="706">
-        <Grid Width="680">
-            <!-- Home -->
+             Background="{DynamicResource BackgroundSemiGray}"
+             d:DesignHeight="706" 
+             FontFamily="{DynamicResource DefaultFont}"
+             d:DesignWidth="680">
+    <Grid Margin="30 20 0 0">
+        <!-- Home -->
+        <Grid.RowDefinitions>
+            <!-- TITLE 0-->
+            <RowDefinition Height="30" />
+            <!-- Sub TITLE 1-->
+            <RowDefinition Height="24"/>
+            <!-- Margin -->
+            <RowDefinition Height="20"/>
+            <!-- Banner 3-->
+            <RowDefinition Height="110"/>
+            <!-- Margin -->
+            <RowDefinition Height="34"/>
+
+            <!-- Customers 5-->
+            <RowDefinition Height="20"/>
+            <!-- Margin -->
+            <RowDefinition Height="12"/>
+            <!-- Customer ListView 7 -->
+            <RowDefinition Height="144"/>
+            <!-- Margin-->
+            <RowDefinition Height="40"/>
+            <!-- Projects 9 -->
+            <RowDefinition Height="20"/>
+            <!-- Margin -->
+            <RowDefinition Height="12"/>
+            <!-- Projects ListView 11-->
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+
+        <TextBlock FontSize="{DynamicResource ExtremeLargeFontSize2}"
+                    Text="Welcome YOHANI!"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource SemiBlack}"/>
+
+        <TextBlock Text="카카오 블라인드 공개채용 포트폴리오 입니다."
+                   LineHeight="20"
+                   VerticalAlignment="Bottom"
+                   Grid.Row="1"
+                   FontSize="{DynamicResource RegularFontSize}"
+                   Foreground="{DynamicResource SemiGray}"/>
+
+        <!-- BANNER -->
+        <Border Grid.Row="3" 
+                CornerRadius="10" 
+                Margin="0 0 82 0"
+                Background="{DynamicResource SemiDarkYellow}"
+                Height="104">
+            <Grid>
+                <TextBlock Text="DREAM COME TRUE WITH..."
+                           Margin="30 26 0 0"
+                           FontWeight="Bold"
+                           FontSize="{DynamicResource ExtremeLargeFontSize0}"
+                           />
+                <Border CornerRadius="6"
+                        Width="80"
+                        Height="20"
+                        Margin="30 0 0 25"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Left"
+                        Background="{DynamicResource SemiBlack}">
+                    <TextBlock Text="SHOW MORE" 
+                               LineHeight="15"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               FontSize="{DynamicResource SmallFontSize}" 
+                               Foreground="{DynamicResource defaultWhite}"/>
+                </Border>
+
+                <Image Source="pack://application:,,,/WPF_Portfolio.StyleResource;Component/Images/undraw_outdoors.png"
+                       Margin="0 8 41 0"
+                       HorizontalAlignment="Right"
+                       Width="233"
+                       Height="102"/>
+            </Grid>
+        </Border>
+
+        <!--#region Customer List -->
+        <TextBlock Text="Customers"
+                   Grid.Row="5"
+                   Foreground="{DynamicResource SemiBlack}" 
+                   FontWeight="Bold"
+                   FontSize="{DynamicResource ExtremeLargeFontSize0}"/>
+
+        <Grid Grid.Row="7">
             <Grid.RowDefinitions>
-                <RowDefinition Height="20" />
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="2*"/>
+                <RowDefinition Height="32"/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
+            <Border Background="{DynamicResource SemiLightGray}" 
+                    CornerRadius="10 10 0 0" 
+                    HorizontalAlignment="Left"
+                    Width="570">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="48"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="110"/>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Width="12" Height="12" 
+                                      HorizontalAlignment="Center"
+                                      Style="{DynamicResource DefaultCheckBox}"
+                                      VerticalAlignment="Center"/>
 
-            <!--#region Banner -->
-            <TextBlock FontSize="{DynamicResource LargeFontSize}"
-                   Text="WELCOME"
-                   FontWeight="Bold"/>
-
-            <Border Grid.Row="1" 
-                CornerRadius="15" 
-                Background="AliceBlue"
-                Height="150">
-                <!--<ImageBrush 
-                    ImageSource="/DummyImages/Yohan.jpg">
-                </ImageBrush>-->
+                    <TextBlock Text="Name" 
+                                       Foreground="{DynamicResource SemiBlack}"
+                                       FontSize="{DynamicResource SmallFontSize}"
+                                       VerticalAlignment="Center"
+                                       Grid.Column="2"/>
+                    <TextBlock Text="PHONE" 
+                                       Foreground="{DynamicResource SemiBlack}"
+                                       FontSize="{DynamicResource SmallFontSize}"
+                                       VerticalAlignment="Center"
+                                       Grid.Column="3"/>
+                    <TextBlock Text="E-MAIL" 
+                                       Foreground="{DynamicResource SemiBlack}" 
+                                       FontSize="{DynamicResource SmallFontSize}"
+                                       VerticalAlignment="Center"
+                                       Grid.Column="4"/>
+                    <TextBlock Text="POINT" 
+                                       Foreground="{DynamicResource SemiBlack}" 
+                                       FontSize="{DynamicResource SmallFontSize}"
+                                       VerticalAlignment="Center"
+                                       Grid.Column="5"/>
+                </Grid>
             </Border>
-            <!--#endregion-->
 
-            <!--#region Ranking List -->
-            <Grid Grid.Row="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="20"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <TextBlock Text="사용자 점수" 
-                       FontWeight="Bold" 
-                       FontSize="{DynamicResource LargeFontSize}"/>
+            <ListView Grid.Row="1" 
+                    ItemContainerStyle="{DynamicResource UserListItem}"
+                    Style="{DynamicResource UserListView}"
+                    ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                    ItemsSource="{Binding Users}"
+                    ScrollViewer.CanContentScroll="False"
+                    HorizontalAlignment="Left"
+                    Width="570"
+                    >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="48"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="110"/>
+                                <ColumnDefinition Width="130"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <CheckBox Width="12" Height="12" 
+                                      HorizontalAlignment="Center"
+                                      Style="{DynamicResource DefaultCheckBox}"
+                                      VerticalAlignment="Center"/>
 
-                <ListView Grid.Row="1" 
-                      ItemContainerStyle="{DynamicResource UserListItem}"
-                      Style="{DynamicResource UserListView}"
-                      ItemsSource="{Binding Users}"
-                      ScrollViewer.CanContentScroll="False"
-                      >
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="20"/>
-                                    <ColumnDefinition Width="50" />
-                                    <ColumnDefinition Width="50"/>
-                                    <ColumnDefinition Width="30"/>
-                                    <ColumnDefinition Width="20"/>
-                                </Grid.ColumnDefinitions>
-                                <!--<TextBlock 
-                                Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, 
-                                       Path=TemplatedParent.(ItemsControl.AlternationIndex)}"/>-->
-                                <TextBlock Text="{Binding Name}" Grid.Column="1"/>
-                                <Ellipse Width="30"
+                            <Ellipse Width="30"
                                      Height="30" 
-                                     Grid.Column="2" >
-                                    <Ellipse.Fill>
-                                        <ImageBrush ImageSource="{Binding ProfilePicture}"/>
-                                    </Ellipse.Fill>
-                                </Ellipse>
-                                <TextBlock Text="{Binding Point}" Grid.Column="3"/>
-                                <TextBlock Text="{Binding}" Grid.Column="4"/>
-                            </Grid>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                                     Grid.Column="1"
+                                     HorizontalAlignment="Left"
+                                     >
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="{Binding ProfilePicture}"/>
+                                </Ellipse.Fill>
+                            </Ellipse>
 
-            </Grid>
-            <!--#endregion-->
 
-            <!--#region Portfolio List -->
-            <Grid Grid.Row="3">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="20"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <TextBlock Text="포트폴리오" 
-                       FontWeight="Bold" 
-                       FontSize="{DynamicResource LargeFontSize}"/>
+                            <TextBlock Text="{Binding Name}" 
+                                       Foreground="{DynamicResource SemiBlack}"
+                                       FontSize="{DynamicResource SmallFontSize}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Grid.Column="2"/>
+                            <TextBlock Text="{Binding Point}" 
+                                       Foreground="{DynamicResource SemiBlack}"
+                                       FontSize="{DynamicResource SmallFontSize}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Grid.Column="3"/>
+                            <TextBlock Text="{Binding}" 
+                                       Foreground="{DynamicResource SemiBlack}" 
+                                       FontSize="{DynamicResource SmallFontSize}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Grid.Column="4"/>
+                            <TextBlock Text="{Binding}" 
+                                       Foreground="{DynamicResource SemiBlack}" 
+                                       FontSize="{DynamicResource SmallFontSize}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Grid.Column="5"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
-                <ListView Grid.Row="1" 
-                      x:Name="PortfolioListView"
-                      ItemsSource="{Binding Portfolios}" 
-                      ScrollViewer.HorizontalScrollBarVisibility="Visible"
-                      MouseMove="ListView_MouseMove"
-                      PreviewMouseLeftButtonDown="ListView_MouseLeftButtonDown"
-                      PreviewMouseLeftButtonUp="ListView_MouseLeftButtonUp"
-                      PreviewMouseWheel="ListView_PreviewMouseWheel">
-                    <ListView.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel Orientation="Horizontal"/>
-                        </ItemsPanelTemplate>
-                    </ListView.ItemsPanel>
-                    <ListView.ItemContainerStyle>
-                        <Style TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource PortfolioListItem}">
-                            <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListViewItem_PreviewMouseLeftButtonDown"/>
-                            <EventSetter Event="MouseLeave" Handler="ListViewItem_MouseLeave"/>
-                        </Style>
-                    </ListView.ItemContainerStyle>
-                    <ListView.ItemTemplate>
-                        <DataTemplate >
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="50"/>
-                                    <RowDefinition Height="20"/>
-                                    <RowDefinition Height="20"/>
-                                    <RowDefinition Height="80"/>
-                                    <RowDefinition Height="20"/>
-                                </Grid.RowDefinitions>
-                                <Image Source="{Binding Image}" Width="50" Height="50"/>
-                                <TextBlock Text="{Binding Title}" 
-                                       FontSize="{DynamicResource LargeFontSize}" 
-                                       FontWeight="Bold"
-                                       Grid.Row="1"/>
-                                <TextBlock Text="{Binding Date}" Grid.Row="2"/>
-                                <TextBlock Text="{Binding Description}" 
-                                       TextWrapping="Wrap" 
-                                       TextTrimming="CharacterEllipsis"
-                                       Grid.Row="3"/>
-                                <Button Content="{Binding URL}"
-                                    Grid.Row="4"
-                                    IsTabStop="False"
-                                    Command="{Binding DataContext.onClickURL,RelativeSource={RelativeSource AncestorType={x:Type ListView}}}"
-                                    CommandParameter="{Binding URL}"
-                                    Style="{DynamicResource URLTextButton}"
-                                    HorizontalAlignment="Left">
-                                    <!--<i:Interaction.Triggers>
-                                    <i:EventTrigger EventName="PreviewLeftMouseButtonDown">
-                                        <i:InvokeCommandAction Command="{Binding DataContext.onClickURL, RelativeSource={RelativeSource AncestorType={x:Type ListView}}}" 
-                                                               CommandParameter="{Binding URL}"/>
-                                    </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
-                                </Button>
-                            </Grid>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </Grid>
-            <!--#endregion-->
         </Grid>
-    </ScrollViewer>
+        <!--#endregion-->
+
+        <!--#region Portfolio List -->
+        <TextBlock Text="Projects" 
+                   FontWeight="Bold" 
+                   Grid.Row="9"
+                   Foreground="{DynamicResource SemiBlack}"
+                   FontSize="{DynamicResource ExtremeLargeFontSize0}"/>
+
+        <ItemsControl Grid.Row="11" ItemsSource="{Binding Portfolios}" Width="570"
+                      HorizontalAlignment="Left">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemContainerStyle>
+                <Style>
+                    <Setter Property="Grid.Margin" Value="0 0 12 0"/>
+                    <!--<Setter Property="Grid.Column" Value="{Binding ColumnIndex}" />
+                    <Setter Property="Grid.Row" Value="{Binding RowIndex}" />
+                     Can either use a DataTrigger to determine these values, 
+                 or store them on the object itself 
+                    <Setter Property="Grid.RowSpan" Value="{Binding RowSpan}" />
+                    <Setter Property="Grid.ColumnSpan" Value="{Binding ColumnSpan}" />-->
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="78"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Border Height="176" 
+                                Width="188"
+                                Grid.RowSpan="2"
+                                CornerRadius="5" 
+                                Background="White">
+                        </Border>
+                        <Border Grid.Row="0" CornerRadius="5 5 0 0" Height="76">
+                            <Border.Background>
+                                <ImageBrush Stretch="UniformToFill" ImageSource="{Binding Image}" />
+                            </Border.Background>
+                        </Border>
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="28"/>
+                                <RowDefinition Height="13"/>
+                                <RowDefinition Height="8"/>
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="{Binding Title}" 
+                                       Foreground="{DynamicResource SemiBlack}"/>
+                            <TextBlock Text="{Binding Date}" Grid.Row="1" 
+                                       Foreground="{DynamicResource SemiLightGray}"/>
+                            <TextBlock Text="{Binding Description}" 
+                                       Grid.Row="3" 
+                                       MaxWidth="158" 
+                                       FontSize="{DynamicResource RegularFontSize}"
+                                       MaxHeight="40"
+                                       TextTrimming="CharacterEllipsis"
+                                       TextWrapping="Wrap" 
+                                       Foreground="{DynamicResource defaultBlack}"/>
+
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <!--<UniformGrid Grid.Row="11" 
+                x:Name="PortfolioListView"
+                ItemsSource="{Binding Portfolios}" 
+                ScrollViewer.HorizontalScrollBarVisibility="Visible"
+                MouseMove="ListView_MouseMove"
+                PreviewMouseLeftButtonDown="ListView_MouseLeftButtonDown"
+                PreviewMouseLeftButtonUp="ListView_MouseLeftButtonUp"
+                PreviewMouseWheel="ListView_PreviewMouseWheel">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource PortfolioListItem}">
+                    <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListViewItem_PreviewMouseLeftButtonDown"/>
+                    <EventSetter Event="MouseLeave" Handler="ListViewItem_MouseLeave"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="80"/>
+                            <RowDefinition Height="20"/>
+                        </Grid.RowDefinitions>
+                        <Image Source="{Binding Image}" Width="50" Height="50"/>
+                        <TextBlock Text="{Binding Title}" 
+                                FontSize="{DynamicResource LargeFontSize}" 
+                                FontWeight="Bold"
+                                Grid.Row="1"/>
+                        <TextBlock Text="{Binding Date}" Grid.Row="2"/>
+                        <TextBlock Text="{Binding Description}" 
+                                TextWrapping="Wrap" 
+                                TextTrimming="CharacterEllipsis"
+                                Grid.Row="3"/>
+                        <Button Content="{Binding URL}"
+                            Grid.Row="4"
+                            IsTabStop="False"
+                            Command="{Binding DataContext.onClickURL,RelativeSource={RelativeSource AncestorType={x:Type ListView}}}"
+                            CommandParameter="{Binding URL}"
+                            Style="{DynamicResource URLTextButton}"
+                            HorizontalAlignment="Left">
+                            --><!--<i:Interaction.Triggers>
+                            <i:EventTrigger EventName="PreviewLeftMouseButtonDown">
+                                <i:InvokeCommandAction Command="{Binding DataContext.onClickURL, RelativeSource={RelativeSource AncestorType={x:Type ListView}}}" 
+                                                        CommandParameter="{Binding URL}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>--><!--
+                        </Button>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </UniformGrid>-->
+        
+    </Grid>
+
 </UserControl>
 

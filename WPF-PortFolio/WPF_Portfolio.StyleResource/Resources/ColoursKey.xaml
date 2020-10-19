@@ -4,25 +4,31 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     >
     <!-- FontSize -->
-    <sys:Double x:Key="ExtremeLargeFontSize">48</sys:Double>
+    <sys:Double x:Key="ExtremeLargeFontSize2">24</sys:Double>
+    <sys:Double x:Key="ExtremeLargeFontSize">18</sys:Double>
+    <sys:Double x:Key="ExtremeLargeFontSize0">17</sys:Double>
     <sys:Double x:Key="LargeFontSize">14</sys:Double>
-    <sys:Double x:Key="RegularFontSize">11</sys:Double>
-    <sys:Double x:Key="SmallFontSize">9</sys:Double>
+    <sys:Double x:Key="RegularFontSize">12</sys:Double>
+    <sys:Double x:Key="SmallFontSize">10</sys:Double>
     <sys:Double x:Key="ExtremeSmallFontSize">9</sys:Double>
 
     <!-- FontFamily -->
     <FontFamily x:Key="kakaoFont">pack://application:,,,/Fonts/#KakaoOTF Regular</FontFamily>
     <FontFamily x:Key="spoqaFont">pack://application:,,,/Fonts/#SpoqaHanSans-Regular</FontFamily>
 
-    <!--<FontFamily x:Key="kakaoFont">./Fonts/#KakaoOTF Regular</FontFamily>
-    <FontFamily x:Key="spoqaFont">./Fonts/#SpoqaHanSans-Regular</FontFamily>-->
-
     <!-- Colors -->
     <SolidColorBrush x:Key="defaultWhite" Color="#fff"/>
     <SolidColorBrush x:Key="defaultBlack" Color="#000"/>
-    <SolidColorBrush x:Key="defaultGrey" Color="#909aa2"/>
     <SolidColorBrush x:Key="defaultBlue" Color="#000099"/>
 
     <SolidColorBrush x:Key="TitleBarColor" Color="#200e32"/>
     <SolidColorBrush x:Key="NavigationBackgroundColor" Color="#ffcd00"/>
+    <SolidColorBrush x:Key="SemiBlack" Color="#200e32"/>
+    <SolidColorBrush x:Key="SemiWhite" Color="#f9f9f9"/>
+    <SolidColorBrush x:Key="SemiGray" Color="#bdbdbd"/>
+    <SolidColorBrush x:Key="SemiLightGray" Color="#f2f2f2"/>
+    <SolidColorBrush x:Key="BackgroundSemiGray" Color="#f7f8f9"/>
+    <SolidColorBrush x:Key="SemiYellow" Color="#ffcd00"/>
+    <SolidColorBrush x:Key="SemiDarkYellow" Color="#ffb800"/>
+
 </ResourceDictionary>

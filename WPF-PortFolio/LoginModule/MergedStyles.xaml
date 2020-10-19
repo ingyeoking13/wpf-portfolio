@@ -5,11 +5,13 @@
         <ResourceDictionary Source="pack://application:,,,/WPF_Portfolio.StyleResource;Component/Resources/ButtonIcon.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/WPF_Portfolio.StyleResource;Component/Resources/WindowIcon.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/WPF_Portfolio.StyleResource;Component/Resources/ImageResource.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/WPF_Portfolio.StyleResource;Component/Fonts/Fonts.xaml"/>
 
         <ResourceDictionary Source="pack://application:,,,/WPF-Portfolio.Styles;component/Themes/ButtonStyles.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/WPF-Portfolio.Styles;component/Themes/CheckBoxStyles.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/WPF-Portfolio.Styles;component/Themes/TextBoxStyles.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/WPF-Portfolio.Styles;component/Themes/WindowStyle.xaml"/>
+
 
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

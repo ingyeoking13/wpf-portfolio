@@ -74,7 +74,7 @@ namespace WPF_PortFolio.Views
             dt.Tick += (s, ee) =>
             {
                 System.Console.WriteLine(ee);
-                PortfolioListView.SelectedItem = null;
+                //PortfolioListView.SelectedItem = null;
                 currentClicked.IsSelected = true;
                 if (dt != null)
                     dt.Stop();

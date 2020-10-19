@@ -9,7 +9,7 @@
         ResizeBorderThickness="0"/>
     <WindowChrome
         x:Key="LoginWindowChrome"
-        CaptionHeight="24"
+        CaptionHeight="40"
         CornerRadius="0"
         GlassFrameThickness="0"
         ResizeBorderThickness="0"/>

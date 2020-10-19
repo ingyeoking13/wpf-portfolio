@@ -4,13 +4,14 @@
         <ResourceDictionary Source="pack://application:,,,/WPF_Portfolio.StyleResource;Component/Resources/ColoursKey.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <Style x:Key="LoginTextBox" TargetType="{x:Type TextBox}">
-        <Setter Property="Background" Value="{DynamicResource defaultWhite}"/>
+        <Setter Property="Background" Value="{DynamicResource SemiWhite}"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="Foreground" Value="{DynamicResource defaultBlack}"/>
-        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Foreground" Value="{DynamicResource SemiBlack}"/>
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="FontSize" Value="{DynamicResource RegularFontSize}"/>
         <Setter Property="AllowDrop" Value="true"/>
         <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
@@ -18,14 +19,16 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border x:Name="border" 
-                            CornerRadius="5"
+                            CornerRadius="10"
                             BorderBrush="{TemplateBinding BorderBrush}" 
                             BorderThickness="{TemplateBinding BorderThickness}" 
                             Background="{TemplateBinding Background}" 
                             SnapsToDevicePixels="True">
                         <ScrollViewer x:Name="PART_ContentHost" 
+                                      TextBlock.LineHeight="16"
                                       Focusable="false" 
                                       VerticalContentAlignment="Center"
+                                      Margin="20 11 0 0"
                                       HorizontalScrollBarVisibility="Hidden" 
                                       VerticalScrollBarVisibility="Hidden"/>
                     </Border>

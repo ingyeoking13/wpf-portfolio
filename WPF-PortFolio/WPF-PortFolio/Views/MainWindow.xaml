@@ -7,12 +7,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_PortFolio"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:converters="clr-namespace:WPF_PortFolio.Utils.Converters"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="MainWindow"
+        Title="YOHANI!"
         AllowsTransparency="True"
-        MinWidth="600"
-        MinHeight="250"
         Height="746" 
         Width="822"
         Style="{StaticResource MainWindowStyle}">
@@ -24,12 +23,14 @@
         <CommandBinding Command="{x:Static SystemCommands.MaximizeWindowCommand}" 
                         Executed="MaximizeWindow" />
     </pStyle:DefaultWindow.CommandBindings>
-
+    <pStyle:DefaultWindow.Resources>
+        <converters:BitmapConverter x:Key="BitmapConverter"/>
+    </pStyle:DefaultWindow.Resources>
     <!-- Navigation Menu And Content -->
     <Grid >
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="142"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Border CornerRadius="0 0 0 10" 
                 Height="706"
@@ -49,20 +50,20 @@
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="20"/>
-                            <ColumnDefinition Width="26"/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="46"/>
+                            <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="1"
-                               Source="pack://application:,,,/WPF_Portfolio.StyleResource;Component/Images/ic_Home.png" 
-                               Width="26" 
-                               Height="26"/>
-                        <!--<Image Source="{Binding ImageURL}" Width="20" Height="20"/>-->
+                        <Image Source="{Binding ImageURL, IsAsync=False, Converter={StaticResource BitmapConverter}}" 
+                               Width="20" 
+                               Height="20"
+                               Margin="20 0 0 0"
+                               />
                         <TextBlock x:Name="_header" 
-                                   Margin="8 0 0 0"
+                                   Margin="6 0 0 0"
                                    FontWeight="Bold"
+                                   HorizontalAlignment="Left"
                                    VerticalAlignment="Center"
+                                   FontFamily="{DynamicResource DefaultFont}"
                                    FontSize="{DynamicResource LargeFontSize}"
                                    Text="{Binding Header}" 
                                    Grid.Column="2" />
@@ -89,7 +90,11 @@
         </ListView>
 
         <!-- Content -->
-        <ContentPresenter x:Name="ContentArea" Grid.Column="1" />
-
+        <ScrollViewer VerticalScrollBarVisibility="Auto" 
+                  Grid.Column="1" 
+                  Width="680"
+                  Height="706">
+            <ContentPresenter x:Name="ContentArea"/>
+        </ScrollViewer>
     </Grid>
 </pStyle:DefaultWindow>

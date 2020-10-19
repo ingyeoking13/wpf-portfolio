@@ -23,7 +23,8 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Thumb}">
-                    <Border CornerRadius="2"
+                    <Border CornerRadius="4"
+                            Width="8"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="1" />
@@ -33,29 +34,20 @@
     </Style>
 
     <ControlTemplate x:Key="VerticalScrollBar" TargetType="{x:Type ScrollBar}">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="0.00001*" />
-            </Grid.RowDefinitions>
-            <Border Grid.RowSpan="3"
-                    CornerRadius="2"
-                    Background="#F0F0F0" />
-            <Track x:Name="PART_Track"
-                   Grid.Row="1"
-                   IsDirectionReversed="true">
-                <Track.DecreaseRepeatButton>
-                    <RepeatButton Style="{StaticResource ScrollBarPageButton}" Command="ScrollBar.PageUpCommand" />
-                </Track.DecreaseRepeatButton>
-                <Track.Thumb>
-                    <Thumb Style="{StaticResource ScrollBarThumb}" 
-                           Margin="1,0,1,0" Background="{DynamicResource defaultGrey}">
-                    </Thumb>
-                </Track.Thumb>
-                <Track.IncreaseRepeatButton>
-                    <RepeatButton Style="{StaticResource ScrollBarPageButton}" Command="ScrollBar.PageDownCommand" />
-                </Track.IncreaseRepeatButton>
-            </Track>
-        </Grid>
+        <Track x:Name="PART_Track"
+                IsDirectionReversed="true">
+            <Track.DecreaseRepeatButton>
+                <RepeatButton Style="{StaticResource ScrollBarPageButton}" Command="ScrollBar.PageUpCommand" />
+            </Track.DecreaseRepeatButton>
+            <Track.Thumb>
+                <Thumb Style="{StaticResource ScrollBarThumb}" 
+                        Margin="1,0,1,0" Background="{DynamicResource SemiGray}">
+                </Thumb>
+            </Track.Thumb>
+            <Track.IncreaseRepeatButton>
+                <RepeatButton Style="{StaticResource ScrollBarPageButton}" Command="ScrollBar.PageDownCommand" />
+            </Track.IncreaseRepeatButton>
+        </Track>
     </ControlTemplate>
 
     <ControlTemplate x:Key="HorizontalScrollBar" TargetType="{x:Type ScrollBar}">
@@ -317,46 +309,28 @@
         <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
         <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
         <Setter Property="Background" Value="{DynamicResource defaultWhite}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource defaultGrey}"/>
-        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource SemiLightGray}"/>
+        <Setter Property="BorderThickness" Value="0 0 0 1"/>
         <Setter Property="IsTabStop" Value="False"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="Padding" Value="0"/>
-        <Setter Property="Height" Value="100"/>
+        <Setter Property="Height" Value="40"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListViewItem}">
                     <Grid>
                         <Border x:Name="Bd" 
-                            CornerRadius="5"
                             BorderBrush="{TemplateBinding BorderBrush}" 
                             Padding="{TemplateBinding Padding}"
                             BorderThickness="{TemplateBinding BorderThickness}" 
                             Background="{TemplateBinding Background}" 
                             SnapsToDevicePixels="true"
-                            Margin="5 2">
-                            <Border.Effect>
-                                <DropShadowEffect BlurRadius="8" 
-                                                  Direction="-45"
-                                                  ShadowDepth="3"/>
-                            </Border.Effect>
+                            Margin="0">
                         </Border>
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                          Margin="5"
                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                     </Grid>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Effect" TargetName="Bd">
-                                <Setter.Value>
-                                    <DropShadowEffect BlurRadius="8" 
-                                                  Direction="-45"
-                                                  ShadowDepth="2"/>
-                                </Setter.Value>
-                            </Setter>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
