@@ -216,7 +216,9 @@
                    Foreground="{DynamicResource SemiBlack}"
                    FontSize="{DynamicResource ExtremeLargeFontSize0}"/>
 
-        <ItemsControl Grid.Row="11" ItemsSource="{Binding Portfolios}" Width="570"
+        <ItemsControl Grid.Row="11" 
+                      ItemsSource="{Binding Portfolios}" 
+                      Width="570"
                       HorizontalAlignment="Left">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -225,13 +227,7 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemContainerStyle>
                 <Style>
-                    <Setter Property="Grid.Margin" Value="0 0 12 0"/>
-                    <!--<Setter Property="Grid.Column" Value="{Binding ColumnIndex}" />
-                    <Setter Property="Grid.Row" Value="{Binding RowIndex}" />
-                     Can either use a DataTrigger to determine these values, 
-                 or store them on the object itself 
-                    <Setter Property="Grid.RowSpan" Value="{Binding RowSpan}" />
-                    <Setter Property="Grid.ColumnSpan" Value="{Binding ColumnSpan}" />-->
+                    <Setter Property="Grid.Margin" Value="0 0 12 12"/>
                 </Style>
             </ItemsControl.ItemContainerStyle>
             <ItemsControl.ItemTemplate>
@@ -241,17 +237,32 @@
                             <RowDefinition Height="78"/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
+                        
                         <Border Height="176" 
                                 Width="188"
                                 Grid.RowSpan="2"
                                 CornerRadius="5" 
                                 Background="White">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="4" 
+                                                  ShadowDepth="1"
+                                                  Color="#3f000000"
+                                                  >
+                                </DropShadowEffect>
+                            </Border.Effect>
                         </Border>
-                        <Border Grid.Row="0" CornerRadius="5 5 0 0" Height="76">
+                        
+                        
+                        <Border Grid.Row="0"
+                                CornerRadius="5 5 0 0"
+                                VerticalAlignment="Top"
+                                Height="78">
                             <Border.Background>
                                 <ImageBrush Stretch="UniformToFill" ImageSource="{Binding Image}" />
                             </Border.Background>
                         </Border>
+                        
+                        
                         <Grid Grid.Row="1">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="28"/>
