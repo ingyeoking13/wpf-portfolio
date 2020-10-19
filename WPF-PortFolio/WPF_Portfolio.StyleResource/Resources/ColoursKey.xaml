@@ -10,7 +10,7 @@
     <sys:Double x:Key="LargeFontSize">14</sys:Double>
     <sys:Double x:Key="RegularFontSize">12</sys:Double>
     <sys:Double x:Key="SmallFontSize">10</sys:Double>
-    <sys:Double x:Key="ExtremeSmallFontSize">9</sys:Double>
+    <sys:Double x:Key="ExtremeSmallFontSize">8</sys:Double>
 
     <!-- FontFamily -->
     <FontFamily x:Key="kakaoFont">pack://application:,,,/Fonts/#KakaoOTF Regular</FontFamily>

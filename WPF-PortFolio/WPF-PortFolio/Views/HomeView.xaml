@@ -238,20 +238,20 @@
                             <RowDefinition/>
                         </Grid.RowDefinitions>
                         
-                        <Border Height="176" 
+                        <Border Height="167" 
                                 Width="188"
                                 Grid.RowSpan="2"
                                 CornerRadius="5" 
+                                BorderThickness="0"
                                 Background="White">
                             <Border.Effect>
-                                <DropShadowEffect BlurRadius="4" 
+                                <DropShadowEffect BlurRadius="2" 
                                                   ShadowDepth="1"
                                                   Color="#3f000000"
                                                   >
                                 </DropShadowEffect>
                             </Border.Effect>
                         </Border>
-                        
                         
                         <Border Grid.Row="0"
                                 CornerRadius="5 5 0 0"
@@ -268,16 +268,41 @@
                                 <RowDefinition Height="28"/>
                                 <RowDefinition Height="13"/>
                                 <RowDefinition Height="8"/>
-                                <RowDefinition />
+                                <RowDefinition Height="40" />
                             </Grid.RowDefinitions>
                             <TextBlock Text="{Binding Title}" 
-                                       Foreground="{DynamicResource SemiBlack}"/>
-                            <TextBlock Text="{Binding Date}" Grid.Row="1" 
-                                       Foreground="{DynamicResource SemiLightGray}"/>
+                                       VerticalAlignment="Bottom"
+                                       Foreground="{DynamicResource SemiBlack}"
+                                       FontSize="{DynamicResource LargeFontSize}"
+                                       FontFamily="{DynamicResource DefaultFont}"
+                                       FontWeight="Bold"
+                                       Margin="12 0 0 0"
+                                       />
+
+                            <Button Content="LINK"
+                                    FontSize="{DynamicResource SmallFontSize}"
+                                    Command="{Binding onClickURL}"
+                                    CommandParameter="{Binding URL}"
+                                    Width="50"
+                                    Height="20"
+                                    HorizontalAlignment="Right"
+                                    Margin="0 0 8 0"
+                                    Style="{DynamicResource SignInButton}"/>
+
+                            <TextBlock Text="{Binding Date}" 
+                                       Grid.Row="1" 
+                                       Margin="12 0 0 0"
+                                       Foreground="#828282"
+                                       VerticalAlignment="Bottom"
+                                       FontFamily="{DynamicResource DefaultFont}"
+                                       FontSize="{DynamicResource ExtremeSmallFontSize}"
+                                       />
                             <TextBlock Text="{Binding Description}" 
                                        Grid.Row="3" 
                                        MaxWidth="158" 
-                                       FontSize="{DynamicResource RegularFontSize}"
+                                       VerticalAlignment="Top"
+                                       FontSize="{DynamicResource SmallFontSize}"
+                                       FontFamily="{DynamicResource DefaultFont}"
                                        MaxHeight="40"
                                        TextTrimming="CharacterEllipsis"
                                        TextWrapping="Wrap" 
