@@ -12,21 +12,38 @@
     <UserControl.Resources>
         <converter:UnixTimeToDateTimeConverter x:Key="unixTimeConverter"/>
     </UserControl.Resources>
-    <Grid>
+    <Grid Margin="30 20 0 0">
+        <!-- Home -->
         <Grid.RowDefinitions>
+            <!-- TITLE 0-->
+            <RowDefinition Height="30" />
+            <!-- Margin -->
+            <RowDefinition Height="18"/>
+            <!-- Textbox 2-->
             <RowDefinition Height="40"/>
-            <RowDefinition Height="20"/>
-            <RowDefinition/>
+            <!-- Margin -->
+            <RowDefinition Height="18"/>
+            <!-- Top 4-->
+            <RowDefinition Height="32"/>
+            <!-- ListView 5-->
+            <RowDefinition Height="400" />
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="검색"/>
+
+        <TextBlock FontSize="{DynamicResource ExtremeLargeFontSize2}"
+                    Text="Search"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource SemiBlack}"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
             <TextBox x:Name="searchTB" 
-                    Width="250"
+                    Width="440"
                     KeyUp="searchTB_KeyUp"
                     PreviewKeyDown="searchTB_KeyDown"
+                    HorizontalAlignment="Left"
+                    Background="{DynamicResource defaultWhite}"
                     Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" >
-                 <TextBox.Style>
-                    <Style TargetType="{x:Type TextBox}">
+                <TextBox.Style>
+                    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource LoginTextBox}">
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding LoadingAnimation}" Value="True">
                                 <Setter Property="IsEnabled" Value="False"/>
@@ -36,7 +53,14 @@
                 </TextBox.Style>
             </TextBox>
 
-            <Popup x:Name="SearchPopup"
+            <Button x:Name="Search" 
+                    Margin="8 0 0 0"
+                    Style="{DynamicResource SearchButton}"
+                    >
+            </Button>
+        </StackPanel>
+
+        <Popup x:Name="SearchPopup"
                     IsOpen="{Binding IsOpen,Mode=TwoWay}"
                    Focusable="False"
                    PlacementTarget="{Binding ElementName=searchTB}"
@@ -66,32 +90,90 @@
                     </i:Interaction.Triggers>
                 </ListView>
             </Popup>
-        </StackPanel>
 
-        <TextBlock Text="Contest List" Grid.Row="1"/>
+        <!-- BANNER -->
+       
+        <!--#region Customer List -->
+        <Border Background="{DynamicResource SemiLightGray}" 
+                Grid.Row="4"
+                CornerRadius="10 10 0 0" 
+                HorizontalAlignment="Left"
+                Width="570">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="270"/>
+                    <ColumnDefinition Width="140"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <CheckBox 
+                          IsTabStop="False"
+                          HorizontalAlignment="Center"
+                          Style="{DynamicResource DefaultCheckBox}"
+                          VerticalAlignment="Center"/>
 
-        <ListView Grid.Row="2" 
+                <TextBlock Text="NAME" 
+                           Foreground="{DynamicResource SemiBlack}"
+                           FontSize="{DynamicResource SmallFontSize}"
+                           VerticalAlignment="Center"
+                           Grid.Column="1"/>
+                <TextBlock Text="START DATE" 
+                           Foreground="{DynamicResource SemiBlack}" 
+                           FontSize="{DynamicResource SmallFontSize}"
+                           VerticalAlignment="Center"
+                           Grid.Column="2"/>
+                <TextBlock Text="DURATION" 
+                           Foreground="{DynamicResource SemiBlack}" 
+                           FontSize="{DynamicResource SmallFontSize}"
+                           VerticalAlignment="Center"
+                           Grid.Column="3"/>
+            </Grid>
+        </Border>
+        <ListView Grid.Row="5" 
                   ItemsSource="{Binding ContestList}"
+                  ItemContainerStyle="{DynamicResource  UserListItem}"
                   VirtualizingPanel.VirtualizationMode="Recycling"
-                  Style="{DynamicResource ContestListView}">
+                  ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                  HorizontalAlignment="Left"
+                  Width="570"
+                  Style="{DynamicResource UserListView}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="50"/>
-                            <ColumnDefinition Width="250" />
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="270" />
+                            <ColumnDefinition Width="140" />
+                            <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding id}"/>
-                        <TextBlock Text="{Binding name}" Grid.Column="1"/>
-                        <TextBlock Text="{Binding startTimeSeconds, Converter={StaticResource unixTimeConverter}}"  Grid.Column="2"/>
+                        <CheckBox IsTabStop="False"
+                                  Style="{DynamicResource DefaultCheckBox}" 
+                                  HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding name}" 
+                                   Width="270"
+                                   TextTrimming="CharacterEllipsis"
+                                   ToolTip="{Binding name}"
+                                   Grid.Column="1"/>
+                        <TextBlock Text="{Binding startTimeSeconds, Converter={StaticResource unixTimeConverter}}"  
+                                   HorizontalAlignment="Left"
+                                   Width="140"
+                                   Grid.Column="2"/>
                         <TextBlock Text="{Binding durationSeconds}" Grid.Column="3"/>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
 
+    </Grid>
+        <!--#endregion-->
+               
+
+            <!--
+                    </StackPanel>
+
+        <TextBlock Text="Contest List" Grid.Row="1"/>
+
+       
         <Grid Grid.Row="2" >
             <Grid.Style>
                 <Style TargetType="{x:Type Grid}">
@@ -103,12 +185,12 @@
                     </Style.Triggers>
                 </Style> 
             </Grid.Style>
-            <!--<Ellipse Width="8" Height="8"/>
+            --><!--<Ellipse Width="8" Height="8"/>
             <Ellipse Width="8" Height="8"/>
             <Ellipse Width="8" Height="8"/>
-            <Ellipse Width="8" Height="8"/>-->
+            <Ellipse Width="8" Height="8"/>--><!--
             <TextBlock Text="Data Loading..." FontSize="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
         
-    </Grid>
+    </Grid>-->
 </UserControl>

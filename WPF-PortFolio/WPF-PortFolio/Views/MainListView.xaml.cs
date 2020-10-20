@@ -30,15 +30,15 @@ namespace WPF_PortFolio.Views
 
         private void searchTB_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Up || 
-                e.Key == Key.Down || 
-                e.Key == Key.Left   || 
-                e.Key == Key.Right  ||
-                e.Key == Key.Enter )
+            if (e.Key == Key.Up ||
+                e.Key == Key.Down ||
+                e.Key == Key.Left ||
+                e.Key == Key.Right ||
+                e.Key == Key.Enter)
             {
 
             }
-            else 
+            else
             {
                 (this.DataContext as MainListViewModel)?.FilterCommand.Execute(null);
             }

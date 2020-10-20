@@ -93,7 +93,8 @@
         <ScrollViewer VerticalScrollBarVisibility="Auto" 
                   Grid.Column="1" 
                   Width="680"
-                      Style="{DynamicResource DefaultScrollViewer}"
+                 Background="{DynamicResource BackgroundSemiGray}"
+                  Style="{DynamicResource DefaultScrollViewer}"
                   Height="706">
             <ContentPresenter x:Name="ContentArea"/>
         </ScrollViewer>

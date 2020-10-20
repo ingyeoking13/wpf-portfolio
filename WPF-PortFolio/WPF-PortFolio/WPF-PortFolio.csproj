@@ -170,5 +170,11 @@
     <Resource Include="Resources\ic_Profile.png" />
     <Resource Include="Resources\ic_Search.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DummyImages\dummyImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DummyImages\yoo.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

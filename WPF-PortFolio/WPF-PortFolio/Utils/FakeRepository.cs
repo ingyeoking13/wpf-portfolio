@@ -16,6 +16,8 @@ namespace WPF_PortFolio.Utils
         public string Description { get; set; }
         public string ProfilePicture { get; set; }
         public float Point { get; set; }
+        public string Phone { get; set; }
+        public string EMail { get; set; }
     }
 
     public class Portfolio
@@ -117,7 +119,9 @@ season String. Can be absent.
                 Name = "정요한",
                 Description = "",
                 ProfilePicture = "/DummyImages/Yohan.jpg",
-                Point = 1.7f
+                Point = 1.7f,
+                Phone = "134-234-5019",
+                EMail = "abcde@naver.com"
             },
             new User
             {
@@ -125,7 +129,9 @@ season String. Can be absent.
                 Name = "정문희",
                 Description = "",
                 ProfilePicture = "/DummyImages/Munee.jpg",
-                Point = 5f
+                Point = 5f,
+                Phone = "134-234-1123",
+                EMail = "kbcde@naver.com"
             },
             new User
             {
@@ -134,14 +140,18 @@ season String. Can be absent.
                 Description = "",
                 ProfilePicture = "/DummyImages/imalnyun.png",
                 Point = 3.5f,
+                Phone = "000-234-1123",
+                EMail = "kbcde@naver.com",
             },
             new User
             { 
                 Id = new Guid(),
                 Name = "유재석" ,
                 Description = "",
-                ProfilePicture = "/DummyImages/JaeSuk.png",
-                Point = 4f
+                ProfilePicture = "/DummyImages/yoo.jpg",
+                Point = 4f,
+                Phone = "000-234-1123",
+                EMail = "ggggg@ngmail.com",
             }
         };
 
@@ -152,7 +162,7 @@ season String. Can be absent.
                 Title = "A.Works",
                 Image = "/DummyImages/AWORKS.png",
                 URL = "https://aworksrpa.com/",
-                Description = "ABCDEFGTIWQMERIQWMEILQWMELQWMEL",
+                Description = "포스코 ICT 참여 프로젝트, Studio",
                 Date = "2020.02 ~ 2020.08"
             },
             new Portfolio
@@ -166,7 +176,7 @@ season String. Can be absent.
             new Portfolio
             { 
                 Title = "Chaos",
-                Image ="",
+                Image = "/DummyImages/dummyImage.jpg",
                 URL = "https://github.com/purplue-blue-develop/hongjun-android",
                 Description = "건축물 결함 조사 기록 어플리케이션",
                 Date = "2020.02 ~ 2020.04",
@@ -174,10 +184,10 @@ season String. Can be absent.
             new Portfolio
             {
                 Title = "Algorithm Study",
-                Image = "",
-                URL = "",
-                Description = "",
-                Date = ""
+                Image = "/DummyImages/dummyImage.jpg",
+                URL = "https://github.com/ingyeoking13/algorithm",
+                Description = "알고리즘 스터디",
+                Date = "2017.10 ~ "
             }
         };
     }
