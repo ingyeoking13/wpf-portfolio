@@ -126,7 +126,7 @@
                     Foreground="{DynamicResource SemiYellow}"
                     BorderThickness="1"
                     Style="{DynamicResource SignInButton}"
-                    Content="Sign in" />
+                    Content="Sign up" />
            
         </Grid>
     </Grid>
