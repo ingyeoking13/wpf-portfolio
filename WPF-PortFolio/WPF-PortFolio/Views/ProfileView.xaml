@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="WPF_PortFolio.Views.ProfileView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_PortFolio.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}"/>
+            </Style>
+            
+            <Style TargetType="{x:Type Button}" x:Key="ProfileBadge" BasedOn="{StaticResource SignInButton}">
+                <Setter Property="FontSize" Value="{DynamicResource RegularFontSize}"/>
+                <Setter Property="Border.CornerRadius" Value="12"/>
+                <Setter Property="Height" Value="26"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Margin="30 30 0 0">
+        <!-- Home -->
+        <Grid.RowDefinitions>
+            <!-- Profile Title 0-->
+            <RowDefinition Height="120" />
+            <!-- Margin -->
+            <RowDefinition Height="26"/>
+            <!-- Textbox readonly 2-->
+            <RowDefinition Height="86"/>
+            <!-- Margin -->
+            <RowDefinition Height="20"/>
+            <!-- Portfolio title 4-->
+            <RowDefinition Height="22"/>
+            <!-- Margin -->
+            <RowDefinition Height="12"/>
+            <!-- Portfolio Button 6-->
+            <RowDefinition Height="54"/>
+            <!-- Margin -->
+            <RowDefinition Height="40"/>
+            <!-- SKILLS TITLE 8-->
+            <RowDefinition Height="22"/>
+            <!-- Margin -->
+            <RowDefinition Height="12"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Profile Title -->
+        <Grid Grid.Row="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <!-- Margin -->
+                <ColumnDefinition Width="24"/>
+                
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <!-- Image -->
+            <Ellipse Width="120" Height="120" HorizontalAlignment="Left" >
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="/DummyImages/Yohan.jpg" Stretch="UniformToFill"/>
+                </Ellipse.Fill>
+            </Ellipse>
+
+            <TextBlock Text="PROFILE"
+                       FontWeight="Bold"
+                       FontSize="{DynamicResource LargeFontSize}"
+                       Foreground="{DynamicResource SemiDarkGray}"
+                       Grid.Column="2"/>
+            
+            <TextBlock Text="JEONG YO HAN" 
+                       FontSize="{DynamicResource ExtremeLargeFontSize2}"
+                       Foreground="{DynamicResource SemiBlack}"
+                       FontWeight="Bold"
+                       Margin="0 26 0 0"
+                       Grid.Column="2"/>
+            
+            <TextBlock Text="1991-08-20" 
+                       Margin="0 61 0 0"
+                       FontSize="{DynamicResource SmallFontSize}"
+                       Foreground="{DynamicResource SemiDarkGray}"
+                       Grid.Column="2"/>
+
+            <StackPanel Orientation="Horizontal" Grid.Column="2">
+                <Button VerticalAlignment="Bottom" 
+                        Style="{DynamicResource ProfileBadge}"
+                        Padding="14 0"
+                        Content="DEVELOPER">
+                </Button>
+                <Button VerticalAlignment="Bottom" 
+                        Style="{DynamicResource ProfileBadge}"
+                        Padding="14 0"
+                        Margin="8 0"
+                        Content="WINDOWS">
+                </Button>
+                <Button VerticalAlignment="Bottom" 
+                        Style="{DynamicResource ProfileBadge}"
+                        Padding="14 0"
+                        Content="C#">
+                </Button>
+            </StackPanel>
+        </Grid>
+        
+        <!-- Profile Text -->
+        <TextBox Grid.Row="2" Style="{DynamicResource LoginTextBox}">
+        </TextBox>
+      
+    </Grid>
+</UserControl>

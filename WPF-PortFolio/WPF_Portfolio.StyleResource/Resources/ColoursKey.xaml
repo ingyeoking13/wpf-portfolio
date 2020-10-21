@@ -26,6 +26,7 @@
     <SolidColorBrush x:Key="SemiBlack" Color="#200e32"/>
     <SolidColorBrush x:Key="SemiWhite" Color="#f9f9f9"/>
     <SolidColorBrush x:Key="SemiGray" Color="#bdbdbd"/>
+    <SolidColorBrush x:Key="SemiDarkGray" Color="#828282"/>
     <SolidColorBrush x:Key="SemiLightGray" Color="#f2f2f2"/>
     <SolidColorBrush x:Key="BackgroundSemiGray" Color="#f7f8f9"/>
     <SolidColorBrush x:Key="SemiYellow" Color="#ffcd00"/>

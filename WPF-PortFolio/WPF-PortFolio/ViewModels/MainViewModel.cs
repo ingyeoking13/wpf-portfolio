@@ -103,8 +103,8 @@ namespace WPF_PortFolio.ViewModels
 
         private void GoAdminPage(object arg)
         {
-            var contentWindow = new AdminView();
-            contentWindow.DataContext = new AdminViewModel(FakeRepository.Instance);
+            var contentWindow = new ProfileView();
+            contentWindow.DataContext = new ProfileViewModel(FakeRepository.Instance);
             view.ContentArea.Content = contentWindow;
         }
     }

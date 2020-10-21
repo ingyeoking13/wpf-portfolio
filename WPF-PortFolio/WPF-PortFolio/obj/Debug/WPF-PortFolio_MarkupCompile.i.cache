@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\obj\Debug\
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\obj\Debug\
 WPF_PortFolio
 none
 false
 DEBUG;TRACE
-C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\App.xaml
-4-421180271
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\App.xaml
+4591843913
 
-191544103058
-201788418819
-Views\AdminView.xaml;Views\HomeView.xaml;Views\MainListView.xaml;Views\MainWindow.xaml;
+19545361024
+201084002068
+Views\ProfileView.xaml;Views\HomeView.xaml;Views\MainListView.xaml;Views\MainWindow.xaml;
 
-False
+True
 
