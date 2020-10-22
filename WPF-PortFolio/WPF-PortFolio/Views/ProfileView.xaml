@@ -90,20 +90,115 @@
                 <Button VerticalAlignment="Bottom" 
                         Style="{DynamicResource ProfileBadge}"
                         Padding="14 0"
-                        Margin="8 0"
+                        Margin="8 0 0 0"
                         Content="WINDOWS">
                 </Button>
                 <Button VerticalAlignment="Bottom" 
                         Style="{DynamicResource ProfileBadge}"
                         Padding="14 0"
+                        Margin="8 0 0 0"
                         Content="C#">
+                </Button>
+                <Button VerticalAlignment="Bottom" 
+                        Style="{DynamicResource ProfileBadge}"
+                        Padding="14 0"
+                        Margin="8 0 0 0"
+                        Content="Android">
+                </Button>
+                <Button VerticalAlignment="Bottom" 
+                        Style="{DynamicResource ProfileBadge}"
+                        Padding="14 0"
+                        Margin="8 0"
+                        Content="Kotlin">
                 </Button>
             </StackPanel>
         </Grid>
         
         <!-- Profile Text -->
-        <TextBox Grid.Row="2" Style="{DynamicResource LoginTextBox}">
+        <TextBox Grid.Row="2" 
+                 Style="{DynamicResource ReadOnlyTextBox}" 
+                 Width="580" 
+                 MaxWidth="580"
+                 HorizontalAlignment="Left"
+                 Height="86"
+                 Text=" 안녕하세요, 개발자 정요한입니다. 이 프로그램은 포트폴리오 용입니다. 저는 서울에서 거주하고 있으며, 좋아하는 동물은 개미입니다. 취미는 산책과 음악 감상입니다. 걸어다니면서 음악은 듣지 않습니다. 최근에는 재규어 중사(SFC.JGR), 백예린에 빠져있습니다. 백예린의 - Popo, 재규어 중사의 - 팽팽한 줄이 끊어지듯, 종말로, BALL을 추천합니다. 
+                 &#x0a; 현업에서 데스크톱 개발자로 일하기 시작하였고, 좋아하는 개발은 클라이언트입니다. 사용자들이 쓸 수 있는 앱을 만들고, 사용자들의 즉각적인 반응을 보는게 재밌습니다. 
+                 &#x0a; 그렇지만 디자이너와 함께 일하는 것은 매번 도전적입니다만, 결과물을 보면 재밌습니다. :)">
         </TextBox>
-      
+
+        <TextBlock Grid.Row="4"
+                   Text="PORTFOLIO LINK"
+                   FontSize="{DynamicResource LargeFontSize}"
+                   Foreground="{DynamicResource SemiDarkGray}"
+                   FontWeight="Bold"
+                   ></TextBlock>
+
+        <StackPanel Grid.Row="6" Orientation="Horizontal">
+            <Grid>
+                <Border Width="124" Height="54" BorderThickness="1" 
+                        CornerRadius="10"
+                        BorderBrush="{DynamicResource defaultWhite}" 
+                        Background="{DynamicResource defaultWhite}">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="5" ShadowDepth="1">
+                        </DropShadowEffect>
+                    </Border.Effect>
+                </Border>
+                <Grid Width="124" Height="54">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Image Width="24" Height="24" Source="pack://application:,,,/WPF_Portfolio.StyleResource;component/Images/github.png"/>
+                    <TextBlock Text="Github" Grid.Column="1"/>
+                    <Button Content=">" Grid.Column="2"/>
+                </Grid>
+            </Grid>
+
+            <Grid>
+                <Border Width="124" Height="54" BorderThickness="1" 
+                        CornerRadius="10"
+                        BorderBrush="{DynamicResource defaultWhite}" 
+                        Background="{DynamicResource defaultWhite}">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="5" ShadowDepth="1">
+                        </DropShadowEffect>
+                    </Border.Effect>
+                </Border>
+                <Grid Width="124" Height="54">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Image Width="24" Height="24" Source="pack://application:,,,/WPF_Portfolio.StyleResource;component/Images/linkedIn.png"/>
+                    <TextBlock Text="Github" Grid.Column="1"/>
+                    <Button Content=">" Grid.Column="2"/>
+                </Grid>
+            </Grid>
+            <Grid>
+                <Border Width="124" Height="54" BorderThickness="1" 
+                        CornerRadius="10"
+                        BorderBrush="{DynamicResource defaultWhite}" 
+                        Background="{DynamicResource defaultWhite}">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="5" ShadowDepth="1">
+                        </DropShadowEffect>
+                    </Border.Effect>
+                </Border>
+                <Grid Width="124" Height="54">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Image Width="24" Height="24" Source="pack://application:,,,/WPF_Portfolio.StyleResource;component/Images/tistory.png"/>
+                    <TextBlock Text="Github" Grid.Column="1"/>
+                    <Button Content=">" Grid.Column="2"/>
+                </Grid>
+            </Grid>
+        </StackPanel>
+
     </Grid>
 </UserControl>

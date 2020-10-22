@@ -13,6 +13,8 @@
                 <ResourceDictionary Source="pack://application:,,,/WPF-Portfolio.Styles;component/Themes/TextBoxStyles.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/WPF_Portfolio.StyleResource;component/Fonts/Fonts.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/WPF_Portfolio.StyleResource;component/Resources/ColoursKey.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WPF_Portfolio.StyleResource;component/Resources/ImageResource.xaml"/>
+
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

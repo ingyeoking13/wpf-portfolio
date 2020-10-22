@@ -137,5 +137,10 @@
   <ItemGroup>
     <Resource Include="Images\ic_search.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\github.png" />
+    <Resource Include="Images\linkedIn.png" />
+    <Resource Include="Images\tistory.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
