@@ -186,9 +186,3 @@ C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\LoginModule\bin\Debug\Syste
 C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\LoginModule\obj\Debug\LoginWindow.g.cs
 C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\LoginModule\obj\Debug\LoginWindow.baml
 C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\LoginModule\obj\Debug\MergedStyles.baml
-C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\LoginModule\bin\Debug\grpc_csharp_ext.x86.dll
-C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\LoginModule\bin\Debug\grpc_csharp_ext.x64.dll
-C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\LoginModule\bin\Debug\libgrpc_csharp_ext.x86.so
-C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\LoginModule\bin\Debug\libgrpc_csharp_ext.x64.so
-C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\LoginModule\bin\Debug\libgrpc_csharp_ext.x86.dylib
-C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\LoginModule\bin\Debug\libgrpc_csharp_ext.x64.dylib

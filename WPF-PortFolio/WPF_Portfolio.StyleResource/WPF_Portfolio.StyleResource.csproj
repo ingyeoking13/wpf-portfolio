@@ -107,19 +107,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Resource Include="Fonts\KakaoOTF-bRg.otf" />
-    <Resource Include="Fonts\Spoqa Han Sans Regular.ttf" />
-    <Resource Include="Fonts\Spoqa Han Sans Bold.ttf" />
-    <Resource Include="Fonts\Spoqa Han Sans Light.ttf" />
-    <Resource Include="Fonts\Spoqa Han Sans Thin.ttf" />
-    <Resource Include="Fonts\NotoSansCJKkr-Black.otf" />
-    <Resource Include="Fonts\NotoSansCJKkr-Bold.otf" />
-    <Resource Include="Fonts\NotoSansCJKkr-DemiLight.otf" />
-    <Resource Include="Fonts\NotoSansCJKkr-Light.otf" />
-    <Resource Include="Fonts\NotoSansCJKkr-Medium.otf" />
-    <Resource Include="Fonts\NotoSansCJKkr-Regular.otf" />
-    <Resource Include="Fonts\NotoSansCJKkr-Thin.otf" />
-    <Resource Include="Fonts\NotoSansMonoCJKkr-Bold.otf" />
-    <Resource Include="Fonts\NotoSansMonoCJKkr-Regular.otf" />
     <Resource Include="Fonts\NotoSansKR-Black.otf" />
     <Resource Include="Fonts\NotoSansKR-Bold.otf" />
     <Resource Include="Fonts\NotoSansKR-Light.otf" />

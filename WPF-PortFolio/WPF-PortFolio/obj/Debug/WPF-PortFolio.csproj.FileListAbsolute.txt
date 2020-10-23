@@ -109,11 +109,11 @@ C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\obj\Debug\Vie
 C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\obj\Debug\Views\HomeView.baml
 C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\obj\Debug\Views\MainListView.baml
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\obj\Debug\Views\ProfileView.g.cs
+C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\obj\Debug\Views\ProfileView.baml
 C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\grpc_csharp_ext.x86.dll
 C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\grpc_csharp_ext.x64.dll
 C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\libgrpc_csharp_ext.x86.so
 C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\libgrpc_csharp_ext.x64.so
 C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\libgrpc_csharp_ext.x86.dylib
 C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\bin\Debug\libgrpc_csharp_ext.x64.dylib
-C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\obj\Debug\Views\ProfileView.g.cs
-C:\Users\clbee\Documents\wpf-portfolio\WPF-PortFolio\WPF-PortFolio\obj\Debug\Views\ProfileView.baml

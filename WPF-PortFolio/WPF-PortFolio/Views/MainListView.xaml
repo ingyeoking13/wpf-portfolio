@@ -75,6 +75,8 @@
                           VirtualizingPanel.VirtualizationMode="Recycling"
                           VirtualizingPanel.IsVirtualizing="True"
                           MouseDoubleClick="ListView_MouseDoubleClick"
+                          Background="White"
+                          Style="{DynamicResource UserListView}"
                           ItemsSource="{Binding SearchResult}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
