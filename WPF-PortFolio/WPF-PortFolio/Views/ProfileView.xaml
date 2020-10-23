@@ -17,6 +17,7 @@
                 <Setter Property="Border.CornerRadius" Value="12"/>
                 <Setter Property="Height" Value="26"/>
                 <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Padding" Value="14 0"/>
             </Style>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -84,30 +85,25 @@
             <StackPanel Orientation="Horizontal" Grid.Column="2">
                 <Button VerticalAlignment="Bottom" 
                         Style="{DynamicResource ProfileBadge}"
-                        Padding="14 0"
                         Content="DEVELOPER">
                 </Button>
                 <Button VerticalAlignment="Bottom" 
                         Style="{DynamicResource ProfileBadge}"
-                        Padding="14 0"
                         Margin="8 0 0 0"
                         Content="WINDOWS">
                 </Button>
                 <Button VerticalAlignment="Bottom" 
                         Style="{DynamicResource ProfileBadge}"
-                        Padding="14 0"
                         Margin="8 0 0 0"
                         Content="C#">
                 </Button>
                 <Button VerticalAlignment="Bottom" 
                         Style="{DynamicResource ProfileBadge}"
-                        Padding="14 0"
                         Margin="8 0 0 0"
                         Content="Android">
                 </Button>
                 <Button VerticalAlignment="Bottom" 
                         Style="{DynamicResource ProfileBadge}"
-                        Padding="14 0"
                         Margin="8 0"
                         Content="Kotlin">
                 </Button>
@@ -128,6 +124,7 @@
 
         <TextBlock Grid.Row="4"
                    Text="PORTFOLIO LINK"
+                   LineHeight="22"
                    FontSize="{DynamicResource LargeFontSize}"
                    Foreground="{DynamicResource SemiDarkGray}"
                    FontWeight="Bold"
@@ -146,17 +143,26 @@
                 </Border>
                 <Grid Width="124" Height="54">
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="34"/>
                         <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="24"/>
                     </Grid.ColumnDefinitions>
-                    <Image Width="24" Height="24" Source="pack://application:,,,/WPF_Portfolio.StyleResource;component/Images/github.png"/>
-                    <TextBlock Text="Github" Grid.Column="1"/>
-                    <Button Content=">" Grid.Column="2"/>
+                    <Image Width="24" Height="24" HorizontalAlignment="Right" Source="pack://application:,,,/WPF_Portfolio.StyleResource;component/Images/github.png"/>
+                    <TextBlock Text="Github" Grid.Column="1"
+                               Margin="6 0 0 0"
+                               VerticalAlignment="Center"
+                               FontSize="{DynamicResource RegularFontSize}"
+                               LineHeight="19"
+                               />
+                    <Button Style="{DynamicResource TransparentImageButton}"
+                            Command="{Binding OpenLink}"
+                            CommandParameter="https://github.com/ingyeoking13"
+                            HorizontalContentAlignment="Left" VerticalAlignment="Center" 
+                            Content="{DynamicResource ForwardIcon}" Grid.Column="2"/>
                 </Grid>
             </Grid>
 
-            <Grid>
+            <Grid Margin="12 0 0 0">
                 <Border Width="124" Height="54" BorderThickness="1" 
                         CornerRadius="10"
                         BorderBrush="{DynamicResource defaultWhite}" 
@@ -168,16 +174,26 @@
                 </Border>
                 <Grid Width="124" Height="54">
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="34"/>
                         <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="24"/>
                     </Grid.ColumnDefinitions>
-                    <Image Width="24" Height="24" Source="pack://application:,,,/WPF_Portfolio.StyleResource;component/Images/linkedIn.png"/>
-                    <TextBlock Text="Github" Grid.Column="1"/>
-                    <Button Content=">" Grid.Column="2"/>
+                    <Image Width="24" Height="24" HorizontalAlignment="Right" Source="pack://application:,,,/WPF_Portfolio.StyleResource;component/Images/tistory.png"/>
+                    <TextBlock Text="Tistory" Grid.Column="1"
+                               VerticalAlignment="Center"
+                               Margin="6 0 0 0"
+                               FontSize="{DynamicResource RegularFontSize}"
+                               LineHeight="19"
+                               />
+                    <Button Style="{DynamicResource TransparentImageButton}"
+                            HorizontalContentAlignment="Left" VerticalAlignment="Center"
+                            Command="{Binding OpenLink}"
+                            CommandParameter="https://ingyeoking13.tistory.com/259"
+                            Content="{DynamicResource ForwardIcon}" Grid.Column="2"/>
                 </Grid>
             </Grid>
-            <Grid>
+
+            <Grid Margin="12 0 0 0">
                 <Border Width="124" Height="54" BorderThickness="1" 
                         CornerRadius="10"
                         BorderBrush="{DynamicResource defaultWhite}" 
@@ -189,16 +205,72 @@
                 </Border>
                 <Grid Width="124" Height="54">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="34"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="24"/>
                     </Grid.ColumnDefinitions>
-                    <Image Width="24" Height="24" Source="pack://application:,,,/WPF_Portfolio.StyleResource;component/Images/tistory.png"/>
-                    <TextBlock Text="Github" Grid.Column="1"/>
-                    <Button Content=">" Grid.Column="2"/>
+                    <Image Width="24" Height="24"
+                           HorizontalAlignment="Right"
+                           Source="pack://application:,,,/WPF_Portfolio.StyleResource;component/Images/linkedIn.png"/>
+
+                    <TextBlock Text="LinkedIn" Grid.Column="1"
+                               VerticalAlignment="Center"
+                               Margin="6 0 0 0"
+                               FontSize="{DynamicResource RegularFontSize}"
+                               LineHeight="19"
+                               />
+
+                    <Button Style="{DynamicResource TransparentImageButton}" 
+                            Command="{Binding OpenLink}"
+                            CommandParameter="https://www.linkedin.com/in/yo-han-jeong-244721147/"
+                            HorizontalAlignment="Left" VerticalAlignment="Center"
+                            Content="{DynamicResource ForwardIcon}" Grid.Column="2"/>
+
                 </Grid>
             </Grid>
         </StackPanel>
 
+        <TextBlock Grid.Row="8" Text="SKILLS"
+                   LineHeight="22"
+                   FontWeight="Bold"
+                   FontSize="{DynamicResource LargeFontSize}"
+                   Foreground="{DynamicResource SemiDarkGray}"
+                   ></TextBlock>
+
+        <StackPanel Grid.Row="10" Orientation="Horizontal">
+            <StackPanel >
+                <Button Style="{DynamicResource ProfileBadge}" Margin="0 8 0 0">
+                    Windows
+                </Button>
+                <Button Style="{DynamicResource ProfileBadge}" Margin="0 8 0 0">
+                    Desktop Client
+                </Button>
+                <Button Style="{DynamicResource ProfileBadge}" Margin="0 8 0 0">
+                    C#
+                </Button>
+                <Button Style="{DynamicResource ProfileBadge}" Margin="0 8 0 0">
+                    XAML
+                </Button>
+            </StackPanel>
+            <StackPanel Margin="8 0 0 0">
+                <Button Style="{DynamicResource ProfileBadge}" Margin="0 8 0 0">
+                    Mobile
+                </Button>
+                <Button Style="{DynamicResource ProfileBadge}" Margin="0 8 0 0">
+                    Android
+                </Button>
+                <Button Style="{DynamicResource ProfileBadge}" Margin="0 8 0 0">
+                    Kotlin
+                </Button>
+            </StackPanel>
+            <StackPanel Margin="8 0 0 0">
+                <Button Style="{DynamicResource ProfileBadge}" Margin="0 8 0 0">
+                    Problem Solving
+                </Button>
+                <Button Style="{DynamicResource ProfileBadge}" Margin="0 8 0 0">
+                    C/C++
+                </Button>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </UserControl>

@@ -6,6 +6,7 @@
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:converter ="clr-namespace:WPF_PortFolio.Utils.Converters"
              xmlns:local="clr-namespace:WPF_PortFolio.Views"
+             Unloaded="_this_Unloaded"
              x:Name="_this"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">

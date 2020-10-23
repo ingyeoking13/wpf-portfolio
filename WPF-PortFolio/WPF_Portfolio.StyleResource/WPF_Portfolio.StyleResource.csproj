@@ -120,6 +120,12 @@
     <Resource Include="Fonts\NotoSansCJKkr-Thin.otf" />
     <Resource Include="Fonts\NotoSansMonoCJKkr-Bold.otf" />
     <Resource Include="Fonts\NotoSansMonoCJKkr-Regular.otf" />
+    <Resource Include="Fonts\NotoSansKR-Black.otf" />
+    <Resource Include="Fonts\NotoSansKR-Bold.otf" />
+    <Resource Include="Fonts\NotoSansKR-Light.otf" />
+    <Resource Include="Fonts\NotoSansKR-Medium.otf" />
+    <Resource Include="Fonts\NotoSansKR-Regular.otf" />
+    <Resource Include="Fonts\NotoSansKR-Thin.otf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -141,6 +147,9 @@
     <Resource Include="Images\github.png" />
     <Resource Include="Images\linkedIn.png" />
     <Resource Include="Images\tistory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ic_forward.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

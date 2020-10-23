@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <!--<FontFamily x:Key="DefaultFont">pack://application:,,,/WPF_Portfolio.StyleResource;component/Fonts/#SpoqaHanSans</FontFamily>-->
-    <FontFamily x:Key="DefaultFont">pack://application:,,,/WPF_Portfolio.StyleResource;component/Fonts/#Noto Sans CJK KR</FontFamily>
+    <!--<FontFamily x:Key="DefaultFont">pack://application:,,,/WPF_Portfolio.StyleResource;component/Fonts/#Noto Sans CJK KR</FontFamily>-->
+    <FontFamily x:Key="DefaultFont">pack://application:,,,/WPF_Portfolio.StyleResource;component/Fonts/#Noto Sans KR</FontFamily>
 </ResourceDictionary>

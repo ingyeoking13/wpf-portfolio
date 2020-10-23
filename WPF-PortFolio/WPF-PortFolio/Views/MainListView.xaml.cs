@@ -74,5 +74,14 @@ namespace WPF_PortFolio.Views
         {
           
         }
+
+        private void _this_Unloaded(object sender, RoutedEventArgs e)
+        {
+            var vm = this.DataContext as MainListViewModel;
+            if (vm == null)
+                return;
+
+            vm.CancelSource.Cancel();
+        }
     }
 }

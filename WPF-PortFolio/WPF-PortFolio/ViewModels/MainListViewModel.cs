@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Threading;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
@@ -9,6 +10,9 @@ namespace WPF_PortFolio.ViewModels
 {
     class MainListViewModel : BaseViewModel
     {
+        public CancellationTokenSource CancelSource { get; set; } 
+            = new CancellationTokenSource();
+
         FakeRepository _repo;
         public ObservableCollection<Contest> ContestList { get; set; }
         public ObservableCollection<Contest> SearchResult { get; set; }
@@ -63,14 +67,16 @@ namespace WPF_PortFolio.ViewModels
             LoadingAnimation = true;
             ContestList = new ObservableCollection<Contest>();
             SearchResult = new ObservableCollection<Contest>();
+
             App.Current.Dispatcher.BeginInvoke((Action)(async () =>
             {
-                var ContestResult = await _repo.GetAllContest();
-                foreach( var contest in ContestResult )
-                {
-                    ContestList.Add(contest);
-                    SearchResult.Add(contest);
-                }
+                var ContestResult = await _repo.GetAllContest(this.CancelSource.Token);
+                if (ContestResult != null)
+                    foreach ( var contest in ContestResult )
+                    {
+                        ContestList.Add(contest);
+                        SearchResult.Add(contest);
+                    }
                 LoadingAnimation = false;
             }));
 

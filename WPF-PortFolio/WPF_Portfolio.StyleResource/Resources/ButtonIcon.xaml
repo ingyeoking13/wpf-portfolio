@@ -49,7 +49,10 @@
         </Canvas>
     </Viewbox>
 
-    <Image x:Key="WindowCloseIcon" Width="24" Height="24" Source="pack://application:,,,/WPF_Portfolio.StyleResource;component/Images/ic_close.png"/>
+    <Image x:Key="WindowCloseIcon" x:Shared="False"  Width="24" Height="24" Source="pack://application:,,,/WPF_Portfolio.StyleResource;component/Images/ic_close.png"/>
     <Image x:Key="SearchIcon" Width="18" Height="18" Source="pack://application:,,,/WPF_Portfolio.StyleResource;component/Images/ic_search.png"/>
+    <Image x:Key="ForwardIcon"
+           x:Shared="False"
+           Width="18" Height="18" Source="pack://application:,,,/WPF_Portfolio.StyleResource;component/Images/ic_forward.png"/>
 
 </ResourceDictionary>

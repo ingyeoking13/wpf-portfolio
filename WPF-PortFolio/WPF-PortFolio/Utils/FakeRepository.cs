@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace WPF_PortFolio.Utils
@@ -95,17 +96,30 @@ season String. Can be absent.
         }
 
 
-        public async Task<IEnumerable<Contest>> GetAllContest()
+        public async Task<IEnumerable<Contest>> GetAllContest(CancellationToken token)
         {
             HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create("https://codeforces.com/api/contest.list");
             var requestResult = (HttpWebResponse)(await httpWebRequest.GetResponseAsync());
             if (requestResult.StatusCode != HttpStatusCode.OK)
                 return null;
 
+            if (token.IsCancellationRequested)
+            {
+                httpWebRequest.Abort();
+                return null;
+            }
             using (var stream = new StreamReader(requestResult.GetResponseStream()))
             {
+                if (token.IsCancellationRequested)
+                    return null;
                 var str = stream.ReadToEnd();
+                if (token.IsCancellationRequested)
+                    return null;
+
                 var result = JsonConvert.DeserializeObject<ContestAPI>(str);
+                if (token.IsCancellationRequested)
+                    return null;
+
                 return result.result;
             }
         }
