@@ -12,6 +12,98 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <converter:UnixTimeToDateTimeConverter x:Key="unixTimeConverter"/>
+        <Style x:Key="waitingAsyncListviewItem" TargetType="{x:Type ListViewItem}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            <Setter Property="Background" Value="{DynamicResource defaultWhite}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource SemiLightGray}"/>
+            <Setter Property="BorderThickness" Value="0 0 0 1"/>
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                        <Grid>
+                            
+                            <Border x:Name="Bd" 
+                                    BorderBrush="{TemplateBinding BorderBrush}" 
+                                    Padding="{TemplateBinding Padding}"
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    Background="{TemplateBinding Background}" 
+                                    SnapsToDevicePixels="true"
+                                    Margin="0"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="270" />
+                                    <ColumnDefinition Width="140" />
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Border Background="{DynamicResource SemiGray}" 
+                                        Width="15" 
+                                        Height="15"
+                                        Margin="-6 0 0 0"/>
+
+                                <Border Background="{DynamicResource SemiGray}" 
+                                        Grid.Column="1"
+                                        Width="240" 
+                                        Height="15"
+                                        HorizontalAlignment="Left" />
+                                <Border Background="{DynamicResource SemiGray}"
+                                        Grid.Column="2"
+                                        Width="110"
+                                        Height="15"
+                                        HorizontalAlignment="Left" />
+                                <Border Background="{DynamicResource SemiGray}"
+                                        Grid.Column="3"
+                                        Width="40"
+                                        Height="15"
+                                        HorizontalAlignment="Left" />
+                            </Grid>
+                            <Canvas >
+                                <Rectangle x:Name="MovingRec"
+                                           Width="20" 
+                                           Height="15"
+                                           Canvas.Left="30"
+                                           Panel.ZIndex="1"
+                                           Canvas.Top="12.5"
+                                           VerticalAlignment="Center">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                            <GradientStop Color="#c0c0c0" Offset="0.0"/>
+                                            <GradientStop Color="#ededed" Offset="0.4"/>
+                                            <GradientStop Color="#f0f0f0" Offset="0.5"/>
+                                            <GradientStop Color="#ededed" Offset="0.7"/>
+                                            <GradientStop Color="#c0c0c0" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                    <Rectangle.Triggers>
+                                        <EventTrigger RoutedEvent="Loaded">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation Storyboard.TargetName="MovingRec"
+                                                                     Storyboard.TargetProperty="(Canvas.Left)"
+                                                                     RepeatBehavior="Forever"
+                                                                     From="5" To="475" Duration="0:0:0.5" 
+                                                                     />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Rectangle.Triggers>
+                                </Rectangle>
+                            </Canvas>
+                            <Border Width="20" Height="15" Background="{DynamicResource defaultWhite}" HorizontalAlignment="Left"  Margin="30 0 0 0"/>
+                            <Border Width="30" Height="15" Background="{DynamicResource defaultWhite}" HorizontalAlignment="Left"  Margin="290 0 0 0"/>
+                            <Border Width="30" Height="15" Background="{DynamicResource defaultWhite}" HorizontalAlignment="Right"  Margin="0 0 110 0"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </UserControl.Resources>
     <Grid Margin="30 20 0 0">
         <!-- Home -->
@@ -67,9 +159,10 @@
                    PlacementTarget="{Binding ElementName=searchTB}"
                    Placement="Bottom"
                    StaysOpen="false">
-                <ListView x:Name="_PopupListView"
+            <ListView x:Name="_PopupListView"
                           Focusable="False"
                           KeyUp="_PopupListView_KeyUp"
+                          MinWidth="440"
                           VirtualizingPanel.IsContainerVirtualizable="True"
                           VirtualizingPanel.IsVirtualizingWhenGrouping="True"
                           VirtualizingPanel.VirtualizationMode="Recycling"
@@ -78,21 +171,27 @@
                           Background="White"
                           Style="{DynamicResource UserListView}"
                           ItemsSource="{Binding SearchResult}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding name}"/>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="SelectionChanged" >
-                            <i:InvokeCommandAction Command="{Binding ChangeSearchTBCommand}"
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding name}" FontFamily="{DynamicResource DefaultFont}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged" >
+                        <i:InvokeCommandAction Command="{Binding ChangeSearchTBCommand}"
                                                    CommandParameter="{Binding SelectedItem, ElementName=_PopupListView}" />
-                            <i:InvokeCommandAction Command="{Binding ScrollMoveCommand}" 
+                        <i:InvokeCommandAction Command="{Binding ScrollMoveCommand}" 
                                                    CommandParameter="{Binding ElementName=_PopupListView}"/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                </ListView>
-            </Popup>
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="MouseLeftButtonUp" >
+                        <i:InvokeCommandAction Command="{Binding ChangeSearchTBCommand}"
+                                                       CommandParameter="{Binding SelectedItem, ElementName=_PopupListView}" />
+                        <i:InvokeCommandAction Command="{Binding ScrollMoveCommand}" 
+                                                       CommandParameter="{Binding ElementName=_PopupListView}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ListView>
+        </Popup>
 
         <Border Background="{DynamicResource SemiLightGray}" 
                 Grid.Row="4"
@@ -162,6 +261,64 @@
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
+        </ListView>
+
+        <ListView  x:Name="asyncHTTPWaitListView" 
+                   Grid.Row="5"
+                   ItemContainerStyle="{DynamicResource  waitingAsyncListviewItem}"
+                   VirtualizingPanel.VirtualizationMode="Recycling"
+                   ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                   HorizontalAlignment="Left"
+                   Width="570"
+                    >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="270" />
+                            <ColumnDefinition Width="140" />
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox IsTabStop="False"
+                                  Style="{DynamicResource DefaultCheckBox}" 
+                                  HorizontalAlignment="Center"/>
+                        <TextBlock Text="...."
+                                   Width="270"
+                                   TextTrimming="CharacterEllipsis"
+                                   ToolTip="{Binding name}"
+                                   Grid.Column="1"/>
+                        <TextBlock Text="......."
+                                   HorizontalAlignment="Left"
+                                   Width="140"
+                                   Grid.Column="2"/>
+                        <TextBlock Text="........" Grid.Column="3"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListViewItem ></ListViewItem>
+            <ListViewItem ></ListViewItem>
+            <ListViewItem></ListViewItem>
+            <ListViewItem></ListViewItem>
+            <ListViewItem></ListViewItem>
+            <ListViewItem></ListViewItem>
+            <ListViewItem></ListViewItem>
+            <ListViewItem></ListViewItem>
+            <ListViewItem></ListViewItem>
+            <ListViewItem></ListViewItem>
+            <ListViewItem></ListViewItem>
+            <ListViewItem></ListViewItem>
+            <ListView.Style>
+                <Style TargetType="{x:Type ListView}" BasedOn="{StaticResource UserListView}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding LoadingAnimation}" Value="True">
+                            <Setter  Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                    
+                </Style>
+            </ListView.Style>
         </ListView>
     </Grid>
 </UserControl>

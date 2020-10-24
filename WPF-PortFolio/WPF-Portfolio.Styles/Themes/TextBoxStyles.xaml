@@ -7,6 +7,7 @@
         <Setter Property="Background" Value="{DynamicResource SemiWhite}"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}"/>
         <Setter Property="Foreground" Value="{DynamicResource SemiBlack}"/>
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
