@@ -142,17 +142,24 @@
             </Border>
 
             <ListView Grid.Row="1" 
+                    x:Name="CustomerList"
                     ItemContainerStyle="{DynamicResource UserListItem}"
                     Style="{DynamicResource UserListView}"
                     ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                     ItemsSource="{Binding Users}"
+                    AllowDrop="True"
                     ScrollViewer.CanContentScroll="False"
                     HorizontalAlignment="Left"
-                    Width="570"
-                    >
+                    GiveFeedback="lbl_GiveFeedback"
+                    MouseMove="CustomerList_MouseMove"
+                    DragOver="CustomerList_DragOver"
+                    Drop="CustomerList_Drop"
+                    PreviewDragLeave="CustomerList_PreviewDragLeave"
+                      PreviewDragEnter="CustomerList_PreviewDragEnter"
+                    Width="570">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Grid>
+                        <Grid PreviewDragLeave="CustomerList_PreviewDragEnter" PreviewDragEnter="CustomerList_PreviewDragEnter"> 
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="50"/>
                                 <ColumnDefinition Width="48"/>

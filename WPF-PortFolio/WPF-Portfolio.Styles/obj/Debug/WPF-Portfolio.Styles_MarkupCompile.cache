@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\gaeli\Source\Repos\ingyeoking13\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\
+C:\Users\gaeli\source\repos\wpf-portfolio\WPF-PortFolio\WPF-Portfolio.Styles\obj\Debug\
 WPF_Portfolio.Styles
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 6545440692
 
 5-377518477
-141111464397
+141441614078
 MergedStyles.xaml;Themes\ButtonStyles.xaml;Themes\CheckBoxStyles.xaml;Themes\ListViewStyles.xaml;Themes\TextBoxStyles.xaml;Themes\WindowStyle.xaml;
 
 False
