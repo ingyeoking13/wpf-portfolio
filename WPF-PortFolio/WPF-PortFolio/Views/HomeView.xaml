@@ -155,11 +155,11 @@
                     DragOver="CustomerList_DragOver"
                     Drop="CustomerList_Drop"
                     PreviewDragLeave="CustomerList_PreviewDragLeave"
-                      PreviewDragEnter="CustomerList_PreviewDragEnter"
+                    PreviewDragEnter="CustomerList_PreviewDragEnter"
                     Width="570">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Grid PreviewDragLeave="CustomerList_PreviewDragEnter" PreviewDragEnter="CustomerList_PreviewDragEnter"> 
+                        <Grid> 
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="50"/>
                                 <ColumnDefinition Width="48"/>
@@ -189,25 +189,29 @@
                                        FontSize="{DynamicResource SmallFontSize}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Left"
-                                       Grid.Column="2"/>
+                                       Grid.Column="2"
+                                       />
                             <TextBlock Text="{Binding Phone}" 
                                        Foreground="{DynamicResource SemiBlack}"
                                        FontSize="{DynamicResource SmallFontSize}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Left"
-                                       Grid.Column="3"/>
+                                       Grid.Column="3"
+                                       />
                             <TextBlock Text="{Binding EMail}" 
                                        Foreground="{DynamicResource SemiBlack}" 
                                        FontSize="{DynamicResource SmallFontSize}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Left"
-                                       Grid.Column="4"/>
+                                       Grid.Column="4"
+                                       />
                             <TextBlock Text="{Binding Point}" 
                                        Foreground="{DynamicResource SemiBlack}" 
                                        FontSize="{DynamicResource SmallFontSize}"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Left"
-                                       Grid.Column="5"/>
+                                       Grid.Column="5"
+                                       />
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>

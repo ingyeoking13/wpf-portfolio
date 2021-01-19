@@ -18,35 +18,35 @@ namespace WPF_PortFolio.Views
         }
 
         DragWindow _dragWindow;
-        DragAdorner dragAdorner;
         private void CustomerList_MouseMove(object sender, MouseEventArgs e)
         {
+
             if (e.LeftButton == MouseButtonState.Pressed)
             {
                 var lvi = getCurrentListViewItem(e);
                 DataObject obj = new DataObject(typeof(ListViewItem), lvi.DataContext);
-                var adLayer = AdornerLayer.GetAdornerLayer(CustomerList);
                 
-                //dragAdorner = new DragAdorner(lvi, new Point(0, 0));
                 _dragWindow = new DragWindow();
-                _dragWindow.RenderSize = lvi.RenderSize;
-                var p =
-                App.Current.MainWindow.PointToScreen(Mouse.GetPosition(App.Current.MainWindow));
-                _dragWindow.Top = p.Y;
-                _dragWindow.Width = p.X;
+                var tf = PresentationSource.FromVisual(this).CompositionTarget.TransformFromDevice;
+                var pos = new Point
+                {
+                    Y = System.Windows.Forms.Control.MousePosition.Y,
+                    X = System.Windows.Forms.Control.MousePosition.X
+                };
+                pos = tf.Transform(pos);
+                _dragWindow.Top = pos.Y;
+                _dragWindow.Width = pos.X;
                 _dragWindow.Width = lvi.RenderSize.Width;
                 _dragWindow.Height = lvi.RenderSize.Height;
+                _dragWindow.IsHitTestVisible = true;
                 _dragWindow.Background = new VisualBrush(lvi)
                 {
                     Opacity = .7
                 };
                 _dragWindow.Show();
 
-                //_dragWindow.PointFromScreen(Mouse.GetPosition(null));
-                //adLayer.Add(dragAdorner);
                 DragDrop.DoDragDrop(lvi, obj, DragDropEffects.Move);
                 _dragWindow.Close();
-                //adLayer.Remove(dragAdorner);
             }
         }
 
@@ -76,7 +76,7 @@ namespace WPF_PortFolio.Views
             var lvi = getCurrentListViewItem(e);
             if (lvi == null)
                 return;
-            var Users = (this.DataContext as HomeViewModel).Users;
+            var Users = (DataContext as HomeViewModel).Users;
             int targetIndex = Users.IndexOf(lvi.DataContext as User);
             var sourceUser = e.Data.GetData(typeof(ListViewItem)) as User;
             if (sourceUser == lvi.DataContext)
@@ -120,29 +120,15 @@ namespace WPF_PortFolio.Views
 
         private void lbl_GiveFeedback(object sender, GiveFeedbackEventArgs e)
         {
-            if (dragAdorner != null)
+            var tf = PresentationSource.FromVisual(this).CompositionTarget.TransformFromDevice;
+            var pos = new Point
             {
-                var pos = Mouse.GetPosition(null);
-                dragAdorner.UpdatePosition(pos);
-            }
-        }
-
-        [DllImport("user32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        internal static extern bool GetCursorPos(ref Win32Point pt);
-
-        [StructLayout(LayoutKind.Sequential)]
-        internal struct Win32Point
-        {
-            public Int32 X;
-            public Int32 Y;
-        };
-
-        public static Point GetMousePosition()
-        {
-            Win32Point w32Mouse = new Win32Point();
-            GetCursorPos(ref w32Mouse);
-            return new Point(w32Mouse.X, w32Mouse.Y);
+                Y = System.Windows.Forms.Control.MousePosition.Y,
+                X = System.Windows.Forms.Control.MousePosition.X
+            };
+            pos = tf.Transform(pos);
+            _dragWindow.Top = pos.Y+5;
+            _dragWindow.Left = pos.X+5;
         }
 
         private static TChild FindChild<TChild>(DependencyObject dependencyObject) where TChild : DependencyObject
@@ -176,33 +162,5 @@ namespace WPF_PortFolio.Views
         {
             e.Handled = true;
         }
-    }
-    public class DragAdorner : Adorner
-    {
-        public DragAdorner(UIElement adornedElement, Point offset)
-            : base(adornedElement)
-        {
-            this.offset = offset;
-            vbrush = new VisualBrush(AdornedElement);
-            vbrush.Opacity = .7;
-        }
-
-
-
-        public void UpdatePosition(Point location)
-        {
-            this.location = location;
-            this.InvalidateVisual();
-        }
-
-        protected override void OnRender(DrawingContext dc)
-        {
-            var p = location;
-            p.Offset(-offset.X, -offset.Y);
-            dc.DrawRectangle(vbrush, null, new Rect(p, this.RenderSize));
-        }
-        private Brush vbrush;
-        private Point location;
-        private Point offset;
     }
 }
